@@ -18,6 +18,12 @@ export default {
 }
 ```
 
+### Google Analitycs Event Measurement
+
+Reports > Real Time > Events or detailed under Behavior > Events > Overview
+
+![Real Time Events](/realtime-events.png)
+
 ### License
 
 [MIT](https://opensource.org/licenses/MIT)
