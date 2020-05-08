@@ -13,14 +13,15 @@ function encode(obj) {
 }
 
 async function sendToAnalytics(fullPath, metric) {
-  const { name, delta, entries } = metric
+  const { name, delta, id entries } = metric
   let opts = {
     ec: 'Web Vitals',
     ea: name,
-    el: fullPath,
+    el: id,
     // Google Analytics metrics must be integers, so the value is rounded.
     ev: parseInt(delta),
-    ni: false
+    dp: fullPath,
+    ni: true
   }
 
   // For CLS the value is first multiplied by 1000 for greater precision
