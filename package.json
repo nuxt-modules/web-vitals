@@ -1,21 +1,17 @@
 {
   "name": "nuxt-vitals",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Web Vitals for Nuxt.js",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "main": "module.js",
   "keywords": [
     "nuxt",
-    "crux",
     "performance",
     "metrics",
-    "CLS",
-    "FCP",
-    "FID",
-    "LCP",
-    "TTFB"
+    "cls",
+    "fcp",
+    "fid",
+    "lcp",
+    "ttfb"
   ],
   "author": {
     "name": "Dalibor Gogic",
