@@ -7,12 +7,30 @@
     "lib": "lib"
   },
   "keywords": [
-    "web-vitals",
-    "nuxt"
+    "nuxt",
+    "crux",
+    "performance",
+    "metrics",
+    "CLS",
+    "FCP",
+    "FID",
+    "LCP",
+    "TTFB"
   ],
-  "author": "Dalibor Gogic <mail@daliborgogic.com> (https://daliborgogic.com)",
+  "author": {
+    "name": "Dalibor Gogic",
+    "email": "mail@daliborgogic.com",
+    "url": "https://daliborgogic.com"
+  },
   "license": "MIT",
   "dependencies": {
     "web-vitals": "^0.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daliborgogic/nuxt-vitals.git"
+  },
+  "bugs": {
+    "url": "https://github.com/daliborgogic/nuxt-vitals/issues"
   }
 }
