@@ -1,6 +1,6 @@
 # nuxt-vitals
 
-> Web Vitals: Essential metrics for a healthy [Nuxt.js](https://github.com/nuxt/nuxt.js)
+> Web Vitals: Essential module for a healthy [Nuxt.js](https://github.com/nuxt/nuxt.js)
 
 [Web Vitals](https://web.dev/vitals/) is an initiative by Google to provide unified guidance for quality signals that are essential to delivering a great user experience on the web.
 
