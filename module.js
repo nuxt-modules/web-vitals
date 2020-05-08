@@ -1,7 +1,7 @@
 import { resolve } from 'path'
 
 export default function (moduleOptions) {
-  const options = { ...moduleOptions}
+  const options = { ...moduleOptions }
 
   this.addPlugin({
     src: resolve(__dirname, 'plugin.js'),
