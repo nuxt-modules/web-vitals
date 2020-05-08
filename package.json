@@ -1,0 +1,20 @@
+{
+  "name": "nuxt-vitals",
+  "version": "0.1.0",
+  "description": "Web Vitals for Nuxt.js",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "web-vitals"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "web-vitals": "^0.2.1"
+  }
+}
