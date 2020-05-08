@@ -20,9 +20,13 @@ export default {
 
 ### Google Analitycs Event Measurement
 
-Reports > Real Time > Events or detailed under Behavior > Events > Overview
+Reports > Real Time > Events
 
 ![Real Time Events](/realtime-events.png)
+
+Behavior > Events > Overview > Event Category > Event Action
+
+![Events Actions](/event-action.png)
 
 ### License
 
