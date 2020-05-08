@@ -6,13 +6,11 @@
   "directories": {
     "lib": "lib"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
-    "web-vitals"
+    "web-vitals",
+    "nuxt"
   ],
-  "author": "",
+  "author": "Dalibor Gogic <mail@daliborgogic.com> (https://daliborgogic.com)",
   "license": "MIT",
   "dependencies": {
     "web-vitals": "^0.2.1"

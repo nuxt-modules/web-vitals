@@ -2,7 +2,7 @@
 
 > Web Vitals: Essential metrics for a healthy [Nuxt.js](https://github.com/nuxt/nuxt.js)
 
-Replace UA-XXXXXXXX-X by your Google Analytics tracking ID.
+[Web Vitals](https://web.dev/vitals/) is an initiative by Google to provide unified guidance for quality signals that are essential to delivering a great user experience on the web.
 
 ### Setup
 
@@ -12,6 +12,7 @@ Replace UA-XXXXXXXX-X by your Google Analytics tracking ID.
 ```javascript
 export default {
   modules: [
+    // Replace UA-XXXXXXXX-X by your Google Analytics tracking ID.
     [ 'nuxt-vitals', { trackingID: 'UA-XXXXXXXX-X' }]
   ]
 }
