@@ -22,11 +22,11 @@ export default {
 
 Reports > Real Time > Events
 
-![Real Time Events](/realtime-events.png)
+![Real Time Events](/images/realtime-events.png)
 
 Behavior > Events > Overview > Event Category > Event Action
 
-![Events Actions](/event-action.png)
+![Events Actions](/images/event-action.png)
 
 ### License
 
