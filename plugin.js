@@ -13,7 +13,7 @@ function encode(obj) {
 }
 
 async function sendToAnalytics(fullPath, metric) {
-  const { name, delta, id entries } = metric
+  const { name, delta, id, entries } = metric
   let opts = {
     ec: 'Web Vitals',
     ea: name,
