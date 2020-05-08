@@ -2,7 +2,6 @@
   "name": "nuxt-vitals",
   "version": "1.0.2",
   "description": "Web Vitals for Nuxt.js",
-  "main": "module.js",
   "keywords": [
     "nuxt",
     "performance",
@@ -13,20 +12,28 @@
     "lcp",
     "ttfb"
   ],
+  "repository": "daliborgogic/nuxt-vitals",
+  "license": "MIT",
   "author": {
     "name": "Dalibor Gogic",
     "email": "mail@daliborgogic.com",
     "url": "https://daliborgogic.com"
   },
-  "license": "MIT",
+  "main": "module.js",
+  "files": [
+    "module.js",
+    "plugin.js"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm run lint"
+  },
   "dependencies": {
     "web-vitals": "^0.2.1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/daliborgogic/nuxt-vitals.git"
-  },
-  "bugs": {
-    "url": "https://github.com/daliborgogic/nuxt-vitals/issues"
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^2.0.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.0.0"
   }
 }
