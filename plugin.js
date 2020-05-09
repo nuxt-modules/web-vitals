@@ -23,7 +23,7 @@ function encode (obj) {
 function sendToAnalytics (fullPath, metric) {
   const { name, delta, id, entries } = metric
   const opts = {
-    ec: 'Web Vitals',
+    ec: '<%= options.eventCategory %>',
     ea: name,
     el: id,
     // Google Analytics metrics must be integers, so the value is rounded.

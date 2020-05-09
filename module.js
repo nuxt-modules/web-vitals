@@ -2,6 +2,10 @@ import { resolve } from 'path'
 
 export default function (moduleOptions) {
   const options = { ...moduleOptions }
+
+  if (!options.eventCategory) {
+    options.eventCategory = 'Web Vitals'
+  }
   if (!options.debug) {
     options.debug = 0
   }
