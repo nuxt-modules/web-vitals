@@ -12,21 +12,21 @@
 ```javascript
 export default {
   modules: [
-    // Replace UA-XXXXXXXX-X by your Google Analytics tracking ID.
-    [ 'nuxt-vitals', { trackingID: 'UA-XXXXXXXX-X' }]
+    [ 'nuxt-vitals', { 
+      // Replace UA-XXXXXXXX-X by your Google Analytics tracking ID.
+      trackingID: 'UA-XXXXXXXX-X' 
+      // Debug { number } default 0 
+      debug: 1
+    }]
   ]
 }
 ```
 
 ### Google Analitycs Event Measurement
 
-Reports > Real Time > Events
-
-![Real Time Events](/images/realtime-events.png)
-
 Behavior > Events > Overview > Event Category > Event Action
 
-![Events Actions](/images/event-action.png)
+![Events Actions](/assets/event-action.png)
 
 ### License
 

@@ -1,6 +1,14 @@
 const KEY = 'ga:user'
 const UID = (localStorage[KEY] = localStorage[KEY] || Math.random() + '.' + Math.random())
 
+function onError (err) {
+  console.error('[nuxt vitals]', err) // eslint-disable-line no-console
+}
+
+function onDebug (label, payload) {
+  console.log(label, payload) // eslint-disable-line no-console
+}
+
 function encode (obj) {
   let k
   let str = 'https://www.google-analytics.com/collect?v=1'
@@ -24,12 +32,6 @@ function sendToAnalytics (fullPath, metric) {
     ni: true
   }
 
-  // For CLS the value is first multiplied by 1000 for greater precision
-  // (note: increase the multiplier for greater precision if needed).
-  if (name === 'CLS') {
-    opts.ev = parseInt(delta * 1000)
-  }
-
   // Calculate the request time by subtracting from TTFB
   // everything that happened prior to the request starting.
   if (name === 'TTFB') {
@@ -39,6 +41,13 @@ function sendToAnalytics (fullPath, metric) {
   const args = { tid: '<%= options.trackingID %>', cid: UID, ...opts }
   const obj = { t: 'event', ...args, ...opts, z: Date.now() }
   const url = encode(obj)
+
+  const debug = parseInt('<%= options.debug %>')
+  // damn eslint no-constant-condition
+  if (debug === 1) {
+    onDebug(name, JSON.stringify(obj, null, 2))
+    onDebug(name + ' URL', URL)
+  }
 
   if (navigator.sendBeacon) {
     navigator.sendBeacon(url, null)
@@ -58,10 +67,6 @@ async function webVitals (fullPath) {
   } catch (err) {
     onError(err)
   }
-}
-
-function onError (err) {
-  console.error('[nuuxt vitals]', err) // eslint-disable-line no-console
 }
 
 export default function ({ app: { router } }) {
