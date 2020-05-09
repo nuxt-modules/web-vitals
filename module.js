@@ -3,7 +3,7 @@ import { resolve } from 'path'
 export default function (moduleOptions) {
   const options = { ...moduleOptions }
   if (!options.debug) {
-    options.debug = false
+    options.debug = 0
   }
 
   this.addPlugin({

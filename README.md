@@ -12,7 +12,7 @@
 ```javascript
 export default {
   modules: [
-    [ 'nuxt-vitals', { 
+    ['nuxt-vitals', { 
       // Replace UA-XXXXXXXX-X by your Google Analytics tracking ID.
       trackingID: 'UA-XXXXXXXX-X' 
       // Debug { number } default 0 
