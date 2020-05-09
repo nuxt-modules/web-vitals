@@ -13,9 +13,12 @@
 export default {
   modules: [
     ['nuxt-vitals', { 
+      // Tracking ID (required)
       // Replace UA-XXXXXXXX-X by your Google Analytics tracking ID.
-      trackingID: 'UA-XXXXXXXX-X' 
-      // Debug { number } default 0 
+      trackingID: 'UA-XXXXXXXX-X',
+      // Event Category (optional), default 'Web Vitals'
+      eventCategory: 'Your Event',
+      // Debug (optional) { number } default 0 
       debug: 1
     }]
   ]
