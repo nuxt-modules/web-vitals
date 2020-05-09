@@ -46,7 +46,7 @@ function sendToAnalytics (fullPath, metric) {
   // damn eslint no-constant-condition
   if (debug === 1) {
     onDebug(name, JSON.stringify(obj, null, 2))
-    onDebug(name + ' URL', URL)
+    onDebug(name + ' URL', url)
   }
 
   if (navigator.sendBeacon) {
