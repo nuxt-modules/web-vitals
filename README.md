@@ -22,7 +22,7 @@ export default {
       // Replace UA-XXXXXXXX-X by your Google Analytics tracking ID.
       trackingID: 'UA-XXXXXXXX-X',
       // Event Category (optional) { string }, default 'Web Vitals'
-      eventCategory: 'Your Event',
+      eventCategory: 'Some Category',
       // Debug (optional) { number } default 0 
       debug: 1
     }]
