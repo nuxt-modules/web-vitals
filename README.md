@@ -4,10 +4,15 @@
 
 [Web Vitals](https://web.dev/vitals/) is an initiative by Google to provide unified guidance for quality signals that are essential to delivering a great user experience on the web.
 
+### Installation
+
+```bash
+npm i nuxt-vitals
+```
+
 ### Setup
 
-- Add `nuxt-vitals` as dependency to your project
-- Add `nuxt-vitals` to modules section of `nuxt.config.js`
+Add `nuxt-vitals` to modules section of `nuxt.config.js`
 
 ```javascript
 export default {
