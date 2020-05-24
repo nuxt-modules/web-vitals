@@ -7,16 +7,16 @@
 ### Installation
 
 ```bash
-npm i nuxt-vitals
+npm install --save-dev nuxt-vitals # or yarn add --dev nuxt-vitals
 ```
 
 ### Setup
 
-Add `nuxt-vitals` to modules section of `nuxt.config.js`
+Add `nuxt-vitals` to buildModules section of `nuxt.config.js`
 
 ```javascript
 export default {
-  modules: [
+  buildModules: [
     ['nuxt-vitals', { 
       // Tracking ID (required) { string }
       // Replace UA-XXXXXXXX-X by your Google Analytics tracking ID.
@@ -29,6 +29,8 @@ export default {
   ]
 }
 ```
+
+:warning: If you are using Nuxt **< v2.9** you have to install the module as a `dependency` (No `--save-dev` or `--dev` flags) and use `modules` section in `nuxt.config.js` instead of `buildModules`.
 
 ### Google Analitycs Event Measurement
 
