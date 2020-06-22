@@ -11,7 +11,7 @@ export default function (moduleOptions) {
   }
   
   // Don't add plugin if disabled
-  if (this.options.disabled) {
+  if (options.disabled) {
     return;
   }  
 
