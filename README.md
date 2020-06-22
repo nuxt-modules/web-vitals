@@ -24,7 +24,8 @@ export default {
       // Event Category (optional) { string }, default 'Web Vitals'
       eventCategory: 'Some Category',
       // Debug (optional) { number } default 0 
-      debug: 1
+      debug: 1,
+      disabled: false
     }]
   ]
 }
