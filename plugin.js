@@ -22,12 +22,14 @@ function encode (obj) {
 
 function sendToAnalytics (fullPath, metric) {
   const { name, delta, id, entries } = metric
+  const multiplier = parseInt('<%= options.multiplierForCLS %>')
   const opts = {
     ec: '<%= options.eventCategory %>',
     ea: name,
     el: id,
     // Google Analytics metrics must be integers, so the value is rounded.
-    ev: parseInt(delta),
+    // For CLS the value is multiplied by 1000 by default for greater precision
+    ev: Math.round(name === 'CLS' ? delta * multiplier : delta),
     dp: fullPath,
     ni: true
   }

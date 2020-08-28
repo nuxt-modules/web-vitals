@@ -6,6 +6,9 @@ export default function (moduleOptions) {
   if (!options.eventCategory) {
     options.eventCategory = 'Web Vitals'
   }
+  if (!options.multiplierForCLS) {
+    options.multiplierForCLS = 1000
+  }
   if (!options.debug) {
     options.debug = 0
   }

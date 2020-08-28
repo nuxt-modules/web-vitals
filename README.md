@@ -23,6 +23,9 @@ export default {
       trackingID: 'UA-XXXXXXXX-X',
       // Event Category (optional) { string }, default 'Web Vitals'
       eventCategory: 'Some Category',
+      // Multiplier For CLS (optional) { number } default 1000
+      // Increase the multiplier for greater precision if needed.
+      multiplierForCLS: 10000,
       // Debug (optional) { number } default 0 
       debug: 1,
       disabled: false
