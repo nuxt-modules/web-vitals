@@ -30,6 +30,7 @@ function sendToAnalytics (fullPath, metric) {
     // Google Analytics metrics must be integers, so the value is rounded.
     // For CLS the value is multiplied by 1000 by default for greater precision
     ev: Math.round(name === 'CLS' ? delta * multiplier : delta),
+    dh: document.location.hostname,
     dp: fullPath,
     ni: true
   }
