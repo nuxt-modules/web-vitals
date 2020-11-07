@@ -9,12 +9,10 @@ export default function (moduleOptions) {
   if (!options.debug) {
     options.debug = 0
   }
-  
   // Don't add plugin if disabled
   if (options.disabled) {
-    return;
-  }  
-
+    return
+  }
   this.addPlugin({
     src: resolve(__dirname, 'plugin.js'),
     fileName: 'nuxt-vitals.js',

@@ -1,72 +1,52 @@
-const KEY = 'ga:user'
-const UID = (localStorage[KEY] = localStorage[KEY] || Math.random() + '.' + Math.random())
+import * as vitals from 'web-vitals'
 
-function onError (err) {
-  console.error('[nuxt vitals]', err) // eslint-disable-line no-console
-}
+// eslint-disable-next-line no-console
+const onError = err => console.error('[nuxt vitals] ', err)
 
-function onDebug (label, payload) {
-  console.log(label, payload) // eslint-disable-line no-console
-}
+// eslint-disable-next-line no-console
+const onDebug = (label, payload) => console.log('[nuxt vitals] ', label, payload)
 
-function encode (obj) {
-  let k
-  let str = 'https://www.google-analytics.com/collect?v=1'
-  for (k in obj) {
-    if (obj[k]) {
-      str += `&${k}=${encodeURIComponent(obj[k])}`
-    }
-  }
-  return str
-}
+async function sendToAnalytics ({ fullPath, metric, trackingID, eventCategory, debug }) {
+  let provider
 
-function sendToAnalytics (fullPath, metric) {
-  const { name, delta, id, entries } = metric
-  const opts = {
-    ec: '<%= options.eventCategory %>',
-    ea: name,
-    el: id,
-    // Google Analytics metrics must be integers, so the value is rounded.
-    ev: parseInt(delta),
-    dp: fullPath,
-    ni: true
-  }
-
-  // Calculate the request time by subtracting from TTFB
-  // everything that happened prior to the request starting.
-  if (name === 'TTFB') {
-    opts.ev = parseInt(delta - entries[0].requestStart)
-  }
-
-  const args = { tid: '<%= options.trackingID %>', cid: UID, ...opts }
-  const obj = { t: 'event', ...args, ...opts, z: Date.now() }
-  const url = encode(obj)
-
-  const debug = parseInt('<%= options.debug %>')
-  // damn eslint no-constant-condition
-  if (debug === 1) {
-    onDebug(name, JSON.stringify(obj, null, 2))
-    onDebug(name + ' URL', url)
-  }
-
-  if (navigator.sendBeacon) {
-    navigator.sendBeacon(url, null)
+  if (trackingID.startsWith('UA-')) {
+    provider = 'ga'
   } else {
-    fetch(url, { method: 'POST', keepalive: true }).catch(onError)
+    provider = 'vercel'
   }
-}
 
-async function webVitals (fullPath) {
   try {
-    const { getCLS, getFID, getLCP, getTTFB, getFCP } = await import('web-vitals')
-    getFID(metric => sendToAnalytics(fullPath, metric))
-    getTTFB(metric => sendToAnalytics(fullPath, metric))
-    getLCP(metric => sendToAnalytics(fullPath, metric))
-    getCLS(metric => sendToAnalytics(fullPath, metric))
-    getFCP(metric => sendToAnalytics(fullPath, metric))
+    const useProvider = await (await import('nuxt-vitals/providers/' + provider + '.js')).default
+    const { url, body } = useProvider({ fullPath, metric, trackingID, eventCategory })
+
+    if (debug === 1) {
+      onDebug(name, JSON.stringify({ url, body }, null, 2))
+    }
+
+    const blob = new Blob([new URLSearchParams(body).toString()], {
+      type: 'application/x-www-form-urlencoded'
+    })
+
+    ;(navigator.sendBeacon && navigator.sendBeacon(url, blob)) ||
+      fetch(url, {
+        body: blob,
+        method: 'POST',
+        credentials: 'omit',
+        keepalive: true
+      })
   } catch (err) {
     onError(err)
   }
+}
+
+function webVitals (fullPath) {
+  Object.keys(vitals).forEach(vital => vitals[vital](async metric => await sendToAnalytics({
+    fullPath,
+    metric,
+    trackingID: '<%= options.trackingID %>',
+    eventCategory: '<%= options.eventCategory %>',
+    debug: parseInt('<%= options.debug %>')
+  })))
 }
 
 export default function ({ app: { router } }) {
