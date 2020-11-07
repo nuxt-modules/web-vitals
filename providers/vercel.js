@@ -1,9 +1,9 @@
 // providers/vercel.js
-export default function ({ fullPath, metric, trackingID }) {
+export default function ({ fullPath, metric }) {
   const url = 'https://vitals.vercel-analytics.com/v1/vitals'
 
   const body = {
-    dsn: trackingID,
+    dsn: process.env.VERCEL_ANALYTICS_ID,
     id: metric.id,
     page: fullPath,
     href: location.href,
