@@ -12,28 +12,32 @@
     "lcp",
     "ttfb"
   ],
-  "repository": "daliborgogic/nuxt-vitals",
+  "repository": "nuxt-community/vitals-module",
   "license": "MIT",
-  "author": {
-    "name": "Dalibor Gogic",
-    "email": "mail@daliborgogic.com",
-    "url": "https://daliborgogic.com"
-  },
-  "main": "module.js",
+  "main": "./dist/module.js",
   "files": [
-    "module.js",
-    "plugin.js"
+    "dist",
+    "templates"
   ],
   "scripts": {
+    "build": "siroc build && tsc",
+    "dev": "nuxt-ts playground",
     "lint": "eslint .",
     "test": "npm run lint"
   },
   "dependencies": {
+    "defu": "^3.2.2",
     "web-vitals": "^0.2.1"
   },
   "devDependencies": {
+    "@nuxt/types": "^2.14.7",
+    "@nuxt/typescript-build": "^2.0.3",
+    "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/eslint-config": "^2.0.2",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.0.0"
+    "eslint": "^7.0.0",
+    "nuxt": "^2.14.7",
+    "siroc": "^0.4.0",
+    "typescript": "^4.0.5"
   }
 }
