@@ -29,7 +29,7 @@
     "test": "npm run lint"
   },
   "dependencies": {
-    "web-vitals": "^0.2.1"
+    "web-vitals": "^1.0.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.2",
