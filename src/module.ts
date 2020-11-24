@@ -2,7 +2,7 @@ import { resolve, dirname} from 'path'
 import defu from 'defu'
 import { PROVIDERS } from './providers'
 
-function vitalsModule() {
+function webVitalsModule() {
   const { nuxt } = this
 
   const options = defu(this.options.vitals, {
@@ -68,6 +68,6 @@ function vitalsModule() {
 }
 
 
-vitalsModule.meta = require('../package.json')
+webVitalsModule.meta = require('../package.json')
 
-export default vitalsModule
+export default webVitalsModule

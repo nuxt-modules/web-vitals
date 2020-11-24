@@ -1,18 +1,21 @@
 {
-  "name": "nuxt-vitals",
+  "name": "@nuxtjs/web-vitals",
   "version": "1.1.0",
   "description": "Web Vitals for Nuxt.js",
   "keywords": [
     "nuxt",
     "performance",
     "metrics",
+    "vitals",
+    "web-vitals",
+    "webvitals",
     "cls",
     "fcp",
     "fid",
     "lcp",
     "ttfb"
   ],
-  "repository": "nuxt-community/vitals-module",
+  "repository": "nuxt-community/web-vitals-module",
   "license": "MIT",
   "main": "./dist/module.js",
   "files": [
@@ -22,8 +25,9 @@
   "scripts": {
     "build": "siroc build && tsc",
     "dev": "nuxt-ts playground",
-    "lint": "eslint .",
-    "test": "npm run lint"
+    "lint": "eslint --ext .ts .",
+    "release": "yarn build && standard-version && npm publish && git push --follow-tags",
+    "test": "yarn lint"
   },
   "dependencies": {
     "defu": "^3.2.2",
@@ -38,6 +42,7 @@
     "eslint": "latest",
     "nuxt": "latest",
     "siroc": "latest",
+    "standard-version": "^9.0.0",
     "typescript": "latest"
   }
 }

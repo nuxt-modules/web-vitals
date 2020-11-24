@@ -1,8 +1,11 @@
 {
   "compilerOptions": {
     "target": "ESNext",
+    "module": "CommonJS",
     "moduleResolution": "node",
-    "module": "ESNext",
-    "outDir": "dist"
-  }
+    "outDir": "dist/runtime"
+  },
+  "include": [
+    "src/runtime"
+  ]
 }
