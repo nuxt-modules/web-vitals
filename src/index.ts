@@ -1,8 +1,8 @@
-import { resolve, dirname} from 'path'
+import { resolve, dirname } from 'path'
 import defu from 'defu'
 import { PROVIDERS } from './providers'
 
-function webVitalsModule() {
+function webVitalsModule () {
   const { nuxt } = this
 
   const options = defu(nuxt.options.webVitals, {
@@ -37,6 +37,7 @@ function webVitalsModule() {
       }
       try {
         provider = resolveProvider(_provider.name, options[_provider.name])
+        // eslint-disable-next-line no-console
         console.info('[@nuxtjs/web-vitals] Auto detected provider:', provider.name)
         break
       } catch (err) {
@@ -46,7 +47,8 @@ function webVitalsModule() {
   }
 
   if (!provider) {
-     console.warn('[@nuxtjs/web-vitals] Please define a provider to activate this module')
+    // eslint-disable-next-line no-console
+    console.warn('[@nuxtjs/web-vitals] Please define a provider to activate this module')
     return
   }
 
@@ -66,7 +68,6 @@ function webVitalsModule() {
     }
   })
 }
-
 
 webVitalsModule.meta = require('../package.json')
 

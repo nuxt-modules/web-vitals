@@ -1,7 +1,7 @@
 
 import { logError } from './utils'
 
-export async function webVitals({ route, options, sendToAnalytics }) {
+export async function webVitals ({ route, options, sendToAnalytics }) {
   const context = {
     fullPath: route.fullPath,
     href: location.href
@@ -14,7 +14,6 @@ export async function webVitals({ route, options, sendToAnalytics }) {
 
   try {
     const { getCLS, getFID, getLCP, getTTFB, getFCP } = await import('web-vitals')
-    const metrics = [ getCLS, getFID, getLCP, getTTFB, getFCP ]
     getFID(metric => sendToAnalytics(context, metric, options))
     getTTFB(metric => sendToAnalytics(context, metric, options))
     getLCP(metric => sendToAnalytics(context, metric, options))
@@ -24,4 +23,3 @@ export async function webVitals({ route, options, sendToAnalytics }) {
     logError(err)
   }
 }
-

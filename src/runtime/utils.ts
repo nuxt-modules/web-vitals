@@ -12,7 +12,7 @@ export function logDebug (label, ...args) {
 
 export function encodeParams (obj) {
   let str = ''
-  for (let k in obj) {
+  for (const k in obj) {
     if (obj[k]) {
       str += `${k}=${encodeURIComponent(obj[k])}`
     }
@@ -20,12 +20,12 @@ export function encodeParams (obj) {
   return str
 }
 
-export function getConnectionSpeed(): string {
+export function getConnectionSpeed (): string {
   // @ts-ignore
   return (typeof navigator !== 'undefined' && navigator.connection && navigator.connection.effectiveType) || ''
 }
 
-export function send(url, body?) {
+export function send (url, body?) {
   logDebug('Sending event:', url, body)
 
   if (navigator.sendBeacon) {

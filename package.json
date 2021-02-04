@@ -38,7 +38,7 @@
     "@nuxt/types": "latest",
     "@nuxt/typescript-build": "latest",
     "@nuxt/typescript-runtime": "latest",
-    "@nuxtjs/eslint-config": "latest",
+    "@nuxtjs/eslint-config-typescript": "^5.0.0",
     "babel-eslint": "latest",
     "eslint": "latest",
     "mkdist": "latest",

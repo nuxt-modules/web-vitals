@@ -10,7 +10,7 @@ export interface Options {
 
 // https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#dl
 
-export function sendToAnalytics({ fullPath, href }, metric, options: Options) {
+export function sendToAnalytics ({ fullPath, href }, metric, options: Options) {
   const opts = {
     ec: options.eventCategory,
     ea: metric.name,
@@ -26,7 +26,7 @@ export function sendToAnalytics({ fullPath, href }, metric, options: Options) {
   // everything that happened prior to the request starting.
   if (metric.name === 'TTFB') {
     // @ts-ignore
-    opts.ev = parseInt(delta - entries[0].requestStart)
+    opts.ev = parseInt(metric.delta - metric.entries[0].requestStart)
   }
 
   const url = googleAnalyticsURL + encodeParams({

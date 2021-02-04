@@ -1,6 +1,6 @@
 // import { NuxtConfig } from '@nuxt/types'
 import webVitals
- from '../src'
+  from '../src'
 
 export default {
   buildModules: [
@@ -10,7 +10,7 @@ export default {
 
   webVitals: {
     provider: 'log'
-  },
+  }
 
   // googleAnalytics: {
   //   id: 'hello'

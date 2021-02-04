@@ -4,16 +4,16 @@ export const PROVIDERS = [
     runtime: require.resolve('./runtime/providers/log'),
     autoDetect: false,
     defaults: () => ({}),
-    validate: () => {},
+    validate: () => {}
   },
   {
     name: 'ga',
     runtime: require.resolve('./runtime/providers/ga'),
-    defaults: (nuxtOptions) => ({
+    defaults: nuxtOptions => ({
       eventCategory: 'Web Vitals',
       id: process.env.GOOGLE_ANALYTICS_ID || (nuxtOptions.googleAnalytics && nuxtOptions.googleAnalytics.id)
     }),
-    validate({ id }) {
+    validate ({ id }) {
       if (!id) {
         throw new Error('[@nuxtjs/web-vitals] googleAnalytics.id is required for Google Analytics integration')
       }
@@ -22,13 +22,13 @@ export const PROVIDERS = [
   {
     name: 'vercel',
     runtime: require.resolve('./runtime/providers/vercel'),
-    defaults: (nuxtOptions) => ({
+    defaults: _nuxtOptions => ({
       dns: process.env.VERCEL_ANALYTICS_ID
     }),
-    validate({ dsn }) {
+    validate ({ dsn }) {
       if (!dsn) {
         throw new Error('[@nuxtjs/web-vitals] vercel.dsn or VERCEL_DSN environment is required for Vercel integration')
       }
     }
-  },
+  }
 ]
