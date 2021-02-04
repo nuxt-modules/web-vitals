@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/nuxt-community/web-vitals-module/compare/v0.1.2...v0.1.3) (2021-02-04)
+
+
+### Bug Fixes
+
+* **vercel:** dsn typo ([95c4d42](https://github.com/nuxt-community/web-vitals-module/commit/95c4d42082f7d31e17a7bf0edb4a88789fd611c7))
+
 ### [0.1.2](https://github.com/nuxt-community/web-vitals-module/compare/v0.1.1...v0.1.2) (2021-02-04)
 
 
