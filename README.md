@@ -1,4 +1,4 @@
-# nuxt-vitals
+# Nuxt Web Vitals
 
 > Web Vitals: Essential module for a healthy [Nuxt.js](https://github.com/nuxt/nuxt.js)
 
@@ -8,25 +8,39 @@
 
 ```bash
 # yarn
-yarn add --dev @nuxtjs/vitals
+yarn add --dev @nuxtjs/web-vitals
 
 # npm
-npm install --save-dev @nuxtjs/vitals
+npm install --save-dev @nuxtjs/web-vitals
 ```
 
-Add `@nuxtjs/vitals` to the `buildModules` section of your `nuxt.config.js`
+Add `@nuxtjs/web-vitals` to the `buildModules` section of your `nuxt.config.js`
 
 ```javascript
 export default {
   buildModules: [
-    '@nuxtjs/vitals'
+    '@nuxtjs/web-vitals'
   }
 }
 ```
 
 :warning: If you are using Nuxt **< v2.9** you have to install the module as a `dependency` (No `--save-dev` or `--dev` flags) and use `modules` section in `nuxt.config.js` instead of `buildModules`.
 
-## With Google Analytics
+## Options
+
+```js
+{
+  webVitals: {
+    provider: 'log', // Auto detectd
+    debug: false,
+    disabled: false
+  }
+}
+```
+
+## Providers
+
+### Google Analytics
 
 Create a GA property and get `trackingID`
 
@@ -34,25 +48,20 @@ In nuxt.config:
 
 ```js
 export default {
-  googleAnalytics: { 
+  googleAnalytics: {
     id: 'UA-XXXXXXXX-X'
   }
 }
 ```
 
-## With Vercel
-
-Comming soon...
-
-### Providers
-
-#### Google Analitycs Event Measurement
-
 Behavior > Events > Overview > Event Category > Event Action
 
 ![Events Actions](/assets/event-action.png)
 
-#### Vercel Analytics
+
+### Vercel Analytics
+
+Works without configuration
 
 
 ### License

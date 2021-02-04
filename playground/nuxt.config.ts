@@ -1,13 +1,14 @@
 // import { NuxtConfig } from '@nuxt/types'
-import nuxtVitals from '../src'
+import webVitals
+ from '../src'
 
 export default {
   buildModules: [
     '@nuxt/typescript-build',
-    nuxtVitals
+    webVitals
   ],
 
-  vitals: {
+  webVitals: {
     provider: 'log'
   },
 

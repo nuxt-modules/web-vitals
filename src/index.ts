@@ -5,7 +5,7 @@ import { PROVIDERS } from './providers'
 function webVitalsModule() {
   const { nuxt } = this
 
-  const options = defu(nuxt.options.vitals, {
+  const options = defu(nuxt.options.webVitals, {
     provider: '',
     debug: false,
     disabled: false
@@ -37,7 +37,7 @@ function webVitalsModule() {
       }
       try {
         provider = resolveProvider(_provider.name, options[_provider.name])
-        console.info('[@nuxtjs/vitals] Auto detected provider:', provider.name)
+        console.info('[@nuxtjs/web-vitals] Auto detected provider:', provider.name)
         break
       } catch (err) {
         // Ignore error on auto detection
@@ -46,7 +46,7 @@ function webVitalsModule() {
   }
 
   if (!provider) {
-     console.warn('[@nuxtjs/vitals] Please define a provider to activate this module')
+     console.warn('[@nuxtjs/web-vitals] Please define a provider to activate this module')
     return
   }
 
