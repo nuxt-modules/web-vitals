@@ -23,7 +23,7 @@ export const PROVIDERS = [
     name: 'vercel',
     runtime: require.resolve('./runtime/providers/vercel'),
     defaults: (nuxtOptions) => ({
-      dns: process.env.VERCEL_DSN
+      dns: process.env.VERCEL_ANALYTICS_ID
     }),
     validate({ dsn }) {
       if (!dsn) {
