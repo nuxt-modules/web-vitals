@@ -5,7 +5,7 @@ import { PROVIDERS } from './providers'
 function webVitalsModule() {
   const { nuxt } = this
 
-  const options = defu(this.options.vitals, {
+  const options = defu(nuxt.options.vitals, {
     provider: '',
     debug: false,
     disabled: false
@@ -15,7 +15,7 @@ function webVitalsModule() {
     return
   }
 
-  const resolveProvider = (providerName, userOptions = {}) => {
+  const resolveProvider = (providerName: string, userOptions = {}) => {
     const provider: any = PROVIDERS.find(p => p.name === providerName)
     if (!provider) {
       throw new Error('Provider not found: ' + providerName)
@@ -52,13 +52,13 @@ function webVitalsModule() {
 
   const runtimeDir = resolve(__dirname, 'runtime')
   nuxt.options.build.transpile.push(runtimeDir)
-  nuxt.options.alias['~nuxtVitals'] = runtimeDir
+  nuxt.options.alias['~vitals'] = runtimeDir
 
   nuxt.options.build.transpile.push(dirname(provider.runtime))
-  nuxt.options.alias['~nuxtVitalsProvider'] = provider.runtime
+  nuxt.options.alias['~vitals-provider'] = provider.runtime
 
   this.addPlugin({
-    src: resolve(__dirname, '../templates/plugin.js'),
+    src: resolve(__dirname, './runtime/vitals.client.js'),
     fileName: 'vitals.client.js',
     options: {
       debug: options.debug,

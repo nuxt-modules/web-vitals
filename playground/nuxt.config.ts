@@ -1,5 +1,5 @@
-import { NuxtConfig } from '@nuxt/types'
-import nuxtVitals from '../src/module'
+// import { NuxtConfig } from '@nuxt/types'
+import nuxtVitals from '../src'
 
 export default {
   buildModules: [
@@ -8,10 +8,7 @@ export default {
   ],
 
   vitals: {
-    // provider: 'log'
-    vercel: {
-      dns: 'hello'
-    }
+    provider: 'log'
   },
 
   // googleAnalytics: {

@@ -1,5 +1,5 @@
-import { webVitals } from '~nuxtVitals'
-import { sendToAnalytics } from '~nuxtVitalsProvider'
+import { webVitals } from '~vitals'
+import { sendToAnalytics } from '~vitals-provider'
 
 const options = <%= JSON.stringify(options, null, 2) %>
 

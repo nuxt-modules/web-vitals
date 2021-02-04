@@ -17,16 +17,17 @@
   ],
   "repository": "nuxt-community/web-vitals-module",
   "license": "MIT",
-  "main": "./dist/module.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "dist",
-    "templates"
+    "dist"
   ],
   "scripts": {
-    "build": "siroc build && tsc",
-    "dev": "nuxt-ts playground",
+    "build": "siroc build && mkdist --src src/runtime --dist dist/runtime",
+    "dev": "nuxt playground",
     "lint": "eslint --ext .ts .",
-    "release": "yarn build && standard-version && npm publish && git push --follow-tags",
+    "prepublishOnly": "yarn build",
+    "release": "yarn test && standard-version && npm publish && git push --follow-tags",
     "test": "yarn lint"
   },
   "dependencies": {
@@ -40,9 +41,10 @@
     "@nuxtjs/eslint-config": "latest",
     "babel-eslint": "latest",
     "eslint": "latest",
-    "nuxt": "latest",
+    "mkdist": "latest",
+    "nuxt-edge": "^2.15.0-26873315.0d497496",
     "siroc": "latest",
-    "standard-version": "^9.0.0",
+    "standard-version": "latest",
     "typescript": "latest"
   }
 }
