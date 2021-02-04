@@ -1,39 +1,50 @@
 {
-  "name": "nuxt-vitals",
+  "name": "@nuxtjs/web-vitals",
   "version": "1.1.0",
   "description": "Web Vitals for Nuxt.js",
   "keywords": [
     "nuxt",
     "performance",
     "metrics",
+    "vitals",
+    "web-vitals",
+    "webvitals",
     "cls",
     "fcp",
     "fid",
     "lcp",
     "ttfb"
   ],
-  "repository": "daliborgogic/nuxt-vitals",
+  "repository": "nuxt-community/web-vitals-module",
   "license": "MIT",
-  "author": {
-    "name": "Dalibor Gogic",
-    "email": "mail@daliborgogic.com",
-    "url": "https://daliborgogic.com"
-  },
-  "main": "module.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "module.js",
-    "plugin.js"
+    "dist"
   ],
   "scripts": {
-    "lint": "eslint .",
-    "test": "npm run lint"
+    "build": "siroc build && mkdist --src src/runtime --dist dist/runtime",
+    "dev": "nuxt playground",
+    "lint": "eslint --ext .ts .",
+    "prepublishOnly": "yarn build",
+    "release": "yarn test && standard-version && npm publish && git push --follow-tags",
+    "test": "yarn lint"
   },
   "dependencies": {
-    "web-vitals": "^0.2.1"
+    "defu": "^3.2.2",
+    "web-vitals": "^1.0.1"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^2.0.2",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.0.0"
+    "@nuxt/types": "latest",
+    "@nuxt/typescript-build": "latest",
+    "@nuxt/typescript-runtime": "latest",
+    "@nuxtjs/eslint-config": "latest",
+    "babel-eslint": "latest",
+    "eslint": "latest",
+    "mkdist": "latest",
+    "nuxt-edge": "^2.15.0-26873315.0d497496",
+    "siroc": "latest",
+    "standard-version": "latest",
+    "typescript": "latest"
   }
 }
