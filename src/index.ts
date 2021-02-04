@@ -47,11 +47,13 @@ function webVitalsModule () {
   }
 
   if (!provider) {
-    if (!nuxt.options.dev) {
+    if (nuxt.options.dev && options.debug) {
+      provider = resolveProvider('log')
+    } else {
       // eslint-disable-next-line no-console
       console.warn('[@nuxtjs/web-vitals] Please define a provider to activate this module')
+      return
     }
-    return
   }
 
   const runtimeDir = resolve(__dirname, 'runtime')

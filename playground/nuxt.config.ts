@@ -9,7 +9,7 @@ export default {
   ],
 
   webVitals: {
-    provider: 'log'
+    debug: true
   }
 
   // googleAnalytics: {

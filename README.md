@@ -31,7 +31,7 @@ export default {
 ```js
 {
   webVitals: {
-    provider: 'log', // Auto detectd
+    // provider: '', // auto detectd
     debug: false,
     disabled: false
   }
