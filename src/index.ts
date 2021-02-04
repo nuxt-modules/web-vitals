@@ -46,9 +46,11 @@ function webVitalsModule () {
     }
   }
 
-  if (!provider && !nuxt.options.dev) {
-    // eslint-disable-next-line no-console
-    console.warn('[@nuxtjs/web-vitals] Please define a provider to activate this module')
+  if (!provider) {
+    if (!nuxt.options.dev) {
+      // eslint-disable-next-line no-console
+      console.warn('[@nuxtjs/web-vitals] Please define a provider to activate this module')
+    }
     return
   }
 
