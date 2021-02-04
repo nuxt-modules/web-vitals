@@ -23,11 +23,11 @@ export const PROVIDERS = [
     name: 'vercel',
     runtime: require.resolve('./runtime/providers/vercel'),
     defaults: _nuxtOptions => ({
-      dns: process.env.VERCEL_ANALYTICS_ID
+      dsn: process.env.VERCEL_ANALYTICS_ID
     }),
     validate ({ dsn }) {
       if (!dsn) {
-        throw new Error('[@nuxtjs/web-vitals] vercel.dsn or VERCEL_DSN environment is required for Vercel integration')
+        throw new Error('[@nuxtjs/web-vitals] vercel.dsn or VERCEL_ANALYTICS_ID environment is required for Vercel integration')
       }
     }
   }
