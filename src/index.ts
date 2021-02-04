@@ -46,7 +46,7 @@ function webVitalsModule () {
     }
   }
 
-  if (!provider) {
+  if (!provider && !nuxt.options.dev) {
     // eslint-disable-next-line no-console
     console.warn('[@nuxtjs/web-vitals] Please define a provider to activate this module')
     return
