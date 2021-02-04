@@ -44,7 +44,9 @@ export default {
 
 Create a GA property and get `trackingID`
 
-In nuxt.config:
+
+
+Either provide `GOOGLE_ANALYTICS_ID` environement variable or set inside `nuxt.config`:
 
 ```js
 export default {

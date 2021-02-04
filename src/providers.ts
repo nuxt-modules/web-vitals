@@ -11,7 +11,7 @@ export const PROVIDERS = [
     runtime: require.resolve('./runtime/providers/ga'),
     defaults: (nuxtOptions) => ({
       eventCategory: 'Web Vitals',
-      id: nuxtOptions.googleAnalytics && nuxtOptions.googleAnalytics.id
+      id: process.env.GOOGLE_ANALYTICS_ID || (nuxtOptions.googleAnalytics && nuxtOptions.googleAnalytics.id)
     }),
     validate({ id }) {
       if (!id) {
