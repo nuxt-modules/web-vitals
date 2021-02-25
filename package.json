@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "defu": "^3.2.2",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.1.0"
   },
   "devDependencies": {
     "@nuxt/types": "latest",
@@ -42,7 +42,7 @@
     "babel-eslint": "latest",
     "eslint": "latest",
     "mkdist": "latest",
-    "nuxt-edge": "^2.15.0-26873315.0d497496",
+    "nuxt-edge": "^2.15.0-26889155.dd0eea40",
     "siroc": "latest",
     "standard-version": "latest",
     "typescript": "latest"
