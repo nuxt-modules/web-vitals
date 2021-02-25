@@ -26,8 +26,6 @@ export function getConnectionSpeed (): string {
 }
 
 export function send (url, body?) {
-  logDebug('Sending event:', url, body)
-
   if (navigator.sendBeacon) {
     navigator.sendBeacon(url, body)
     return
