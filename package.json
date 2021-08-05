@@ -26,10 +26,8 @@
     "build": "siroc build && mkdist --src src/runtime --dist dist/runtime",
     "dev": "nuxt playground",
     "lint": "eslint --ext .ts .",
-    "prepare": "siroc build && mkdist --src src/runtime --dist dist/runtime",
-    "prepublishOnly": "yarn build",
-    "release": "yarn test && standard-version && npm publish && git push --follow-tags",
-    "test": "yarn lint"
+    "release": "npm test && standard-version && npm publish && git push --follow-tags",
+    "test": "npm lint"
   },
   "dependencies": {
     "defu": "^3.2.2",
