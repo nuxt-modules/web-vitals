@@ -5,7 +5,7 @@ export interface Options {
   debug: boolean
 }
 
-const vitalsUrl = 'https://vitals.vercel-analytics.com/v1/vitals'
+const vitalsUrl = 'https://vitals.vercel-analytics.com/v1/vitals?d=1'
 
 export function sendToAnalytics ({ fullPath, href }, metric, options: Options) {
   const body = {
