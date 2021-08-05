@@ -1,6 +1,6 @@
 import { UID, encodeParams, send } from '../utils'
 
-const googleAnalyticsURL = 'https://www.google-analytics.com/collect?v=1&'
+const googleAnalyticsURL = 'https://www.google-analytics.com/collect?v=1'
 
 export interface Options {
   debug: boolean
