@@ -16,6 +16,7 @@
     "ttfb"
   ],
   "license": "MIT",
+  "repository": "iranagame/web-vitals-module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
