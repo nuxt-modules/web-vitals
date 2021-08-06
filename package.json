@@ -15,8 +15,8 @@
     "lcp",
     "ttfb"
   ],
+  "repository": "nuxt-community/web-vitals-module",
   "license": "MIT",
-  "repository": "iranagame/web-vitals-module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
@@ -26,8 +26,9 @@
     "build": "siroc build && mkdist --src src/runtime --dist dist/runtime",
     "dev": "nuxt playground",
     "lint": "eslint --ext .ts .",
-    "release": "npm test && standard-version && npm publish && git push --follow-tags",
-    "test": "npm lint"
+    "prepublishOnly": "yarn build",
+    "release": "yarn test && standard-version && npm publish && git push --follow-tags",
+    "test": "yarn lint"
   },
   "dependencies": {
     "defu": "^3.2.2",
