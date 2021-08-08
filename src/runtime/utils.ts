@@ -14,7 +14,7 @@ export function encodeParams (obj) {
   let str = ''
   for (const k in obj) {
     if (obj[k]) {
-      str += `${k}=${encodeURIComponent(obj[k])}`
+      str += `&${k}=${encodeURIComponent(obj[k])}`
     }
   }
   return str
