@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "defu": "^3.2.2",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^2.1.0"
   },
   "devDependencies": {
     "@nuxt/types": "latest",
