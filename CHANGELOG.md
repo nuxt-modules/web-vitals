@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/nuxt-community/web-vitals-module/compare/v0.1.4...v0.1.5) (2021-08-12)
+
+
+### Bug Fixes
+
+* correct url encoding for ga provider ([#26](https://github.com/nuxt-community/web-vitals-module/issues/26)) ([945b1cf](https://github.com/nuxt-community/web-vitals-module/commit/945b1cf33076f666259855958e75fde0d1721b5a))
+* **ga:** use `ufo` to encode params (resolves [#25](https://github.com/nuxt-community/web-vitals-module/issues/25)) ([2b5d489](https://github.com/nuxt-community/web-vitals-module/commit/2b5d489b159389813d351099910c84b320510845))
+
 ### [0.1.4](https://github.com/nuxt-community/web-vitals-module/compare/v0.1.3...v0.1.4) (2021-02-25)
 
 
