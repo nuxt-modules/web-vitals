@@ -64,7 +64,7 @@ function webVitalsModule () {
   nuxt.options.alias['~vitals-provider'] = provider.runtime
 
   this.addPlugin({
-    src: resolve(__dirname, './runtime/vitals.client.js'),
+    src: resolve(__dirname, './runtime/vitals.client.mjs'),
     fileName: 'vitals.client.js',
     options: {
       debug: options.debug,
