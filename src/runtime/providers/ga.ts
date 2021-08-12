@@ -1,6 +1,7 @@
-import { UID, encodeParams, send } from '../utils'
+import { withQuery } from 'ufo'
+import { UID, send } from '../utils'
 
-const googleAnalyticsURL = 'https://www.google-analytics.com/collect?v=1'
+const googleAnalyticsURL = 'https://www.google-analytics.com/collect'
 
 export interface Options {
   debug: boolean
@@ -13,13 +14,13 @@ export interface Options {
 export function sendToAnalytics ({ fullPath, href }, metric, options: Options) {
   const opts = {
     ec: options.eventCategory,
-    ea: metric.name,
-    el: metric.id,
+    ea: metric.name as string,
+    el: metric.id as string,
     // Google Analytics metrics must be integers, so the value is rounded.
-    ev: parseInt(metric.delta),
-    dl: fullPath,
-    dh: href,
-    ni: true
+    ev: parseInt(metric.delta) + '',
+    dl: fullPath as string,
+    dh: href as string,
+    ni: 'true'
   }
 
   // Calculate the request time by subtracting from TTFB
@@ -29,12 +30,13 @@ export function sendToAnalytics ({ fullPath, href }, metric, options: Options) {
     opts.ev = parseInt(metric.delta - metric.entries[0].requestStart)
   }
 
-  const url = googleAnalyticsURL + encodeParams({
+  const url = withQuery(googleAnalyticsURL, {
+    v: '1',
     t: 'event',
     tid: options.id,
     cid: UID,
     ...opts,
-    z: Date.now()
+    z: Date.now() + ''
   })
 
   send(url)

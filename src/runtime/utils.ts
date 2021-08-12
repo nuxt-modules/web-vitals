@@ -1,6 +1,5 @@
-
 export const KEY = 'ga:user'
-export const UID = (localStorage[KEY] = localStorage[KEY] || Math.random() + '.' + Math.random())
+export const UID: string = (localStorage[KEY] = localStorage[KEY] || Math.random() + '.' + Math.random())
 
 export function logError (err) {
   console.error('[nuxt vitals]', err) // eslint-disable-line no-console
@@ -8,16 +7,6 @@ export function logError (err) {
 
 export function logDebug (label, ...args) {
   console.log(label, ...args) // eslint-disable-line no-console
-}
-
-export function encodeParams (obj) {
-  let str = ''
-  for (const k in obj) {
-    if (obj[k]) {
-      str += `&${k}=${encodeURIComponent(obj[k])}`
-    }
-  }
-  return str
 }
 
 export function getConnectionSpeed (): string {

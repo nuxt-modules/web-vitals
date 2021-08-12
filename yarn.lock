@@ -6746,7 +6746,7 @@ nuxt-edge@latest:
     "@nuxt/vue-renderer-edge" "2.16.0-27145454.a418371e"
     "@nuxt/webpack-edge" "2.16.0-27145454.a418371e"
 
-nuxt-swc@^0.0.3:
+nuxt-swc@latest:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/nuxt-swc/-/nuxt-swc-0.0.3.tgz#434e3f8c44533fca3db7143371ee8a3e5950bae7"
   integrity sha512-0JdL21Qxtc94pu3aNheglHQ/KZu5JUELZNeYKJlyCyoYi0APF9J4i2co5T2dLWdnuJ0l1bPitHIcfOlajYPHSA==
