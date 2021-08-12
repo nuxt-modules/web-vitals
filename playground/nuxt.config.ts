@@ -4,7 +4,7 @@ import webVitals
 
 export default {
   buildModules: [
-    '@nuxt/typescript-build',
+    'nuxt-swc',
     webVitals
   ],
 
