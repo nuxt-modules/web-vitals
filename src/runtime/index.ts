@@ -13,7 +13,7 @@ export async function webVitals ({ route, options, sendToAnalytics }) {
   // }
 
   try {
-    const { getCLS, getFID, getLCP, getTTFB, getFCP } = await import('web-vitals')
+    const { getCLS, getFID, getLCP, getTTFB, getFCP } = await import('web-vitals').then((r: any) => r.default || r)
     getFID(metric => sendToAnalytics(context, metric, options))
     getTTFB(metric => sendToAnalytics(context, metric, options))
     getLCP(metric => sendToAnalytics(context, metric, options))
