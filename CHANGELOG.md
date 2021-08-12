@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/nuxt-community/web-vitals-module/compare/v0.1.6...v0.1.7) (2021-08-12)
+
+
+### Bug Fixes
+
+* de-default web-vitals import ([ac169af](https://github.com/nuxt-community/web-vitals-module/commit/ac169afaa248bf419b7fc30894e1f93c8f4e9910))
+
 ### [0.1.6](https://github.com/nuxt-community/web-vitals-module/compare/v0.1.5...v0.1.6) (2021-08-12)
 
 
