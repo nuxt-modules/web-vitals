@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/nuxt-community/web-vitals-module/compare/v0.1.5...v0.1.6) (2021-08-12)
+
+
+### Bug Fixes
+
+* add esm workaround for nuxt < 2.16 ([42840cc](https://github.com/nuxt-community/web-vitals-module/commit/42840ccddbe9ff449c95ca8a9d8297f8a68b6b71))
+* use .mjs for vitals.client ([e52e73c](https://github.com/nuxt-community/web-vitals-module/commit/e52e73c8f23face06439652c5a38d5168b53ab0c))
+
 ### [0.1.5](https://github.com/nuxt-community/web-vitals-module/compare/v0.1.4...v0.1.5) (2021-08-12)
 
 
