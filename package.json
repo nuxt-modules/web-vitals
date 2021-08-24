@@ -18,11 +18,11 @@
   "repository": "nuxt-community/web-vitals-module",
   "license": "MIT",
   "exports": {
-    ".": "./dist/index.cjs",
+    ".": "./dist/index.js",
     "./*": "./*",
     "./dist/runtime/*": "./dist/runtime/*.mjs"
   },
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"

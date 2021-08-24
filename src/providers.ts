@@ -1,14 +1,14 @@
 export const PROVIDERS = [
   {
     name: 'log',
-    runtime: require.resolve('@nuxtjs/web-vitals/dist/runtime/providers/log'),
+    runtime: require.resolve('./runtime/providers/log'),
     autoDetect: false,
     defaults: () => ({}),
     validate: () => {}
   },
   {
     name: 'ga',
-    runtime: require.resolve('@nuxtjs/web-vitals/dist/runtime/providers/ga'),
+    runtime: require.resolve('./runtime/providers/ga'),
     defaults: nuxtOptions => ({
       eventCategory: 'Web Vitals',
       id: process.env.GOOGLE_ANALYTICS_ID || (nuxtOptions.googleAnalytics && nuxtOptions.googleAnalytics.id)
@@ -21,7 +21,7 @@ export const PROVIDERS = [
   },
   {
     name: 'vercel',
-    runtime: require.resolve('@nuxtjs/web-vitals/dist/runtime/providers/vercel'),
+    runtime: require.resolve('./runtime/providers/vercel'),
     defaults: _nuxtOptions => ({
       dsn: process.env.VERCEL_ANALYTICS_ID
     }),
