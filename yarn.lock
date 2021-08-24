@@ -6446,7 +6446,7 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
-mkdist@^0.3.3, mkdist@latest:
+mkdist@^0.3.3:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/mkdist/-/mkdist-0.3.3.tgz#d36f5e068d711dee6d3ac8993bf82672abc1321b"
   integrity sha512-PDKLTflQHifHwbyDQxSqtT9jUThT2jgeRUnRdIF9tsFLLyoie+nYX12aLg2bKUKoBdluPVRL9kzv8h/nliH/kg==
@@ -9433,6 +9433,11 @@ ufo@^0.7.7:
   version "0.7.7"
   resolved "https://registry.yarnpkg.com/ufo/-/ufo-0.7.7.tgz#0062f9e5e790819b0fb23ca24d7c63a4011c036a"
   integrity sha512-N25aY3HBkJBnahm+2l4JRBBrX5I+JPakF/tDHYDTjd3wUR7iFLdyiPhj8mBwBz21v728BKwM9L9tgBfCntgdlw==
+
+ufo@^0.7.9:
+  version "0.7.9"
+  resolved "https://registry.yarnpkg.com/ufo/-/ufo-0.7.9.tgz#0268e3734b413c9ed6f3510201f42372821b875c"
+  integrity sha512-6t9LrLk3FhqTS+GW3IqlITtfRB5JAVr5MMNjpBECfK827W+Vh5Ilw/LhTcHWrt6b3hkeBvcbjx4Ti7QVFzmcww==
 
 uglify-js@^3.1.4, uglify-js@^3.5.1:
   version "3.14.1"
