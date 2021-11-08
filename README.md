@@ -43,8 +43,9 @@ export default {
 
 ### Google Analytics
 
-Create a GA property and get `trackingID`
+_Report WebVitals to GA_
 
+Create a GA property and get `trackingID`
 
 Either provide `GOOGLE_ANALYTICS_ID` environement variable or set inside `nuxt.config`:
 
@@ -63,9 +64,13 @@ Behavior > Events > Overview > Event Category > Event Action
 
 ### Vercel Analytics
 
+_Report WebVitals to Vercel_
+
 Works without configuration
 
 ### Basic logger
+
+_Report WebVitals to Console_
 
 Output metrics to the console insead of sending them to a remote provider 
 
@@ -78,6 +83,8 @@ Output metrics to the console insead of sending them to a remote provider
   }
 }
 ```
+
+:warning: this provider does not send WebVitals trough network, issues with navigator extensions can not be deteced with this method.
 
 ### License
 
