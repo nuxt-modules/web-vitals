@@ -30,5 +30,17 @@ export const PROVIDERS = [
         throw new Error('[@nuxtjs/web-vitals] vercel.dsn or VERCEL_ANALYTICS_ID environment is required for Vercel integration')
       }
     }
+  },
+  {
+    name: 'api',
+    runtime: require.resolve('./runtime/providers/api'),
+    defaults: nuxtOptions => ({
+      url: (nuxtOptions.api && nuxtOptions.api.url)
+    }),
+    validate ({ url }) {
+      if(!url) {
+        throw new Error('[@nuxtjs/web-vitals] api.url is required for API integration')
+      }
+    }
   }
 ]

@@ -2,7 +2,7 @@
 
 > Web Vitals: Essential module for a healthy [Nuxt.js](https://github.com/nuxt/nuxt.js)
 
-[Web Vitals](https://web.dev/vitals) is an initiative by Google to provide unified guidance for quality signals that are essential to delivering a great user experience on the web.  
+[Web Vitals](https://web.dev/vitals) is an initiative by Google to provide unified guidance for quality signals that are essential to delivering a great user experience on the web.
 This module will gather those metrics on each page view, and send them to a provider using either [`Navigator.sendBeacon()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) or [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
 ## Installation
@@ -72,7 +72,7 @@ Works without configuration
 
 _Report WebVitals to Console_
 
-Output metrics to the console insead of sending them to a remote provider 
+Output metrics to the console insead of sending them to a remote provider
 
 ```js
 {
@@ -85,6 +85,24 @@ Output metrics to the console insead of sending them to a remote provider
 ```
 
 :warning: this provider does not send WebVitals trough network, issues with navigator extensions can not be deteced with this method.
+
+### Logging to an api
+
+_Report WebVitals to an endpoint_
+
+Output metrics are send to an enpoint.
+
+```js
+export default {
+  webVitals: {
+    provider: 'api',
+    debug: true // debug enable metrics reporting on dev environments
+  },
+  api: {
+    url: 'xxxxx' // add the endpoint to which data needs to be send
+  }
+}
+```
 
 ### License
 

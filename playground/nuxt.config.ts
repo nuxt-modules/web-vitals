@@ -15,4 +15,9 @@ export default {
   // googleAnalytics: {
   //   id: 'hello'
   // }
+
+  // api: {
+  //   url: '/analytics'
+  // },
+  // serverMiddleware: ['~/api/analytics'],
 }
