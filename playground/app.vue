@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Nuxt />
+    <NuxtLink to="/about">
+      About page
+    </NuxtLink>
+    <NuxtPage/>
     <hr>
     <div>
       Metrics:
@@ -13,18 +16,12 @@
   </div>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      events: []
-    }
-  },
-  mounted () {
+<script setup lang="ts">
+  const events = ref([])
+  onMounted(() => {
     window.onVitalEvent && window.onVitalEvent((event) => {
-      this.events.unshift(event)
-      this.events = this.events.splice(0, 3 * 4)
+      events.value.unshift(event)
+      events.value = events.value.splice(0, 3 * 4)
     })
-  }
-}
+  })
 </script>
