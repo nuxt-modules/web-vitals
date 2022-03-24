@@ -1,7 +1,7 @@
 {
   "name": "@nuxtjs/web-vitals",
-  "version": "0.1.8",
-  "description": "Web Vitals for Nuxt.js",
+  "version": "0.2.0",
+  "description": "Web Vitals module for Nuxt.js",
   "keywords": [
     "nuxt",
     "performance",
@@ -15,40 +15,55 @@
     "lcp",
     "ttfb"
   ],
+  "contributors": [
+    "Baroshem <jakub.andrzejewski.dev@gmail.com>",
+    "Dalibor Gogic <mail@daliborgogic.com>"
+  ],
   "repository": "nuxt-community/web-vitals-module",
   "license": "MIT",
+  "type": "module",
   "exports": {
-    ".": "./dist/index.js",
-    "./*": "./*",
-    "./dist/runtime/*": "./dist/runtime/*.mjs"
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
   },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "siroc build",
-    "dev": "nuxt playground",
-    "lint": "eslint --ext .ts .",
-    "prepublishOnly": "yarn build",
-    "release": "yarn test && standard-version && npm publish && git push --follow-tags",
-    "test": "yarn lint"
+    "prepack": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "docs": "cd docs && yarn dev",
+    "release": "nuxt-module-build && standard-version && git push --follow-tags && npm publish",
+    "lint": "eslint --ext .js,.ts,.vue"
   },
   "dependencies": {
     "defu": "^5.0.0",
     "ufo": "^0.7.9",
+    "@nuxt/kit": "npm:@nuxt/kit-edge@latest",
     "web-vitals": "^2.1.0"
   },
   "devDependencies": {
-    "@nuxt/types": "latest",
+    "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
-    "babel-eslint": "latest",
     "eslint": "latest",
-    "nuxt-edge": "latest",
-    "nuxt-swc": "latest",
-    "siroc": "latest",
-    "standard-version": "latest",
-    "typescript": "latest"
+    "nuxt3": "latest",
+    "standard-version": "^9.3.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/nuxt-community/web-vitals-module/issues"
+  },
+  "homepage": "https://github.com/nuxt-community/web-vitals-module#readme",
+  "directories": {
+    "doc": "docs",
+    "example": "playground"
   }
 }
