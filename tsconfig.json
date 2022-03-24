@@ -1,8 +1,6 @@
 {
+  "extends": "./playground/.nuxt/tsconfig.json",
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "CommonJS",
-    "moduleResolution": "node",
-    "strict": false
+    "types": ["./playground/types"]
   }
 }
