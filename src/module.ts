@@ -46,6 +46,8 @@ export default defineNuxtModule<ModuleOptions>({
       disabled: options.disabled,
     })
 
+    nuxt.options.alias.ufo = 'ufo/dist/index.mjs'
+
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir)
     addPlugin(resolve(runtimeDir, 'plugin.client'))
