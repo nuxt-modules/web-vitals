@@ -7,7 +7,7 @@ export const KEY = 'ga:user'
 export const UID: string = (localStorage[KEY] = localStorage[KEY] || Math.random() + '.' + Math.random())
 
 
-sendToAnalytics: ({ fullPath, href }: RouteContext, metric: WebVitalsMetric, options: ModuleOptions) => {
+export const sendToAnalytics = ({ fullPath, href }: RouteContext, metric: WebVitalsMetric, options: ModuleOptions) => {
   const opts = {
     ec: 'Web Vitals',
     ea: metric.name as string,
@@ -29,7 +29,7 @@ sendToAnalytics: ({ fullPath, href }: RouteContext, metric: WebVitalsMetric, opt
   const url = withQuery('https://www.google-analytics.com/collect', {
     v: '1',
     t: 'event',
-    tid: options.options.googleAnalyticsId,
+    tid: options.options.googleMeasurementId,
     cid: UID,
     ...opts,
     z: Date.now() + ''

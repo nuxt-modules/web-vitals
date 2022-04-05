@@ -10,7 +10,7 @@ export interface ModuleOptions {
   debug: boolean;
   disabled: boolean;
   options?: {
-    googleAnalyticsId: string;
+    googleMeasurementId: string;
     vercelAnalyticsDsn: string;
   }
 }
@@ -43,8 +43,8 @@ export default defineNuxtModule<ModuleOptions>({
       console.warn('`[@nuxtjs/web-vitals]` No Analytics providers selected. Using built in `log`')
     }
 
-    if (options.provider === 'ga' && !options.options.googleAnalyticsId) {
-      throw new Error('`[@nuxtjs/web-vitals]` Missing Google Analytics ID in module configuration')
+    if (options.provider === 'ga' && !options.options.googleMeasurementId) {
+      throw new Error('`[@nuxtjs/web-vitals]` Missing Google Measurement ID in module configuration')
     }
 
     if (options.provider === 'vercel' && !options.options.vercelAnalyticsDsn) {
