@@ -1,6 +1,8 @@
 import { RouteContext, WebVitalsMetric } from "../types"
 import { send } from "../utils"
-import { ModuleOptions } from '../../module'
+import type { ModuleOptions } from '../../module'
+
+const VERCEL_ANALYTICS_URL: string = 'https://vitals.vercel-analytics.com/v1/vitals'
 
 const getConnectionSpeed = (): string => {
   // @ts-ignore
@@ -27,5 +29,5 @@ export const sendToAnalytics = ({ fullPath, href }: RouteContext, metric: WebVit
     type: 'application/x-www-form-urlencoded'
   })
 
-  send('https://vitals.vercel-analytics.com/v1/vitals', blob)
+  send(VERCEL_ANALYTICS_URL, blob)
 }

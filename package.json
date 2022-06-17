@@ -1,7 +1,7 @@
 {
   "name": "@nuxtjs/web-vitals",
   "version": "0.2.0",
-  "description": "Web Vitals module for Nuxt.js",
+  "description": "Web Vitals module for Nuxt",
   "keywords": [
     "nuxt",
     "performance",
@@ -14,10 +14,6 @@
     "fid",
     "lcp",
     "ttfb"
-  ],
-  "contributors": [
-    "Baroshem <jakub.andrzejewski.dev@gmail.com>",
-    "Dalibor Gogic <mail@daliborgogic.com>"
   ],
   "repository": "nuxt-community/web-vitals-module",
   "license": "MIT",
@@ -43,23 +39,18 @@
     "lint": "eslint --ext .js,.ts,.vue"
   },
   "dependencies": {
-    "defu": "^5.0.0",
-    "ufo": "^0.7.9",
-    "@nuxt/kit": "npm:@nuxt/kit-edge@latest",
+    "@nuxt/kit": "3.0.0-rc.4",
     "web-vitals": "^2.1.0"
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
     "eslint": "latest",
-    "nuxt3": "latest",
-    "standard-version": "^9.3.2"
+    "nuxt": "3.0.0-rc.4",
+    "standard-version": "^9.5.0"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "bugs": {
-    "url": "https://github.com/nuxt-community/web-vitals-module/issues"
   },
   "homepage": "https://github.com/nuxt-community/web-vitals-module#readme",
   "directories": {

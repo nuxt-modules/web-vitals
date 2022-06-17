@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from 'nuxt3'
+import { defineNuxtConfig } from 'nuxt'
 import webVitalsModule from '../src/module'
 
 export default defineNuxtConfig({
@@ -7,10 +7,7 @@ export default defineNuxtConfig({
   ],
 
   webVitals: {
-    debug: true
+    debug: true,
+    provider: 'log',
   }
-
-  // googleAnalytics: {
-  //   id: 'hello'
-  // }
 })

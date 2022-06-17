@@ -1,10 +1,11 @@
 import { ModuleOptions } from "../../module"
 import { RouteContext, WebVitalsMetric } from "../types"
-import { withQuery } from 'ufo'
-import { send } from "../utils"
+// import { withQuery } from 'ufo'
+import { send } from '../utils'
 
 export const KEY = 'ga:user'
 export const UID: string = (localStorage[KEY] = localStorage[KEY] || Math.random() + '.' + Math.random())
+const GOOGLE_ANALYTICS_URL: string = 'https://www.google-analytics.com/collect'
 
 
 export const sendToAnalytics = ({ fullPath, href }: RouteContext, metric: WebVitalsMetric, options: ModuleOptions) => {
@@ -26,7 +27,7 @@ export const sendToAnalytics = ({ fullPath, href }: RouteContext, metric: WebVit
     opts.ev = parseInt(metric.delta - metric.entries[0].requestStart)
   }
 
-  const url = withQuery('https://www.google-analytics.com/collect', {
+  const url = `${GOOGLE_ANALYTICS_URL}?` + new URLSearchParams({
     v: '1',
     t: 'event',
     tid: options.options.googleMeasurementId,

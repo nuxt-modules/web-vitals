@@ -51,15 +51,14 @@ export default defineNuxtModule<ModuleOptions>({
       throw new Error('`[@nuxtjs/web-vitals]` Missing Vercel Analytics DSN in module configuration')
     }
 
-    nuxt.options.publicRuntimeConfig.webVitals = defu(nuxt.options.publicRuntimeConfig.webVitals, {
+    nuxt.options.runtimeConfig.public.webVitals = defu(nuxt.options.runtimeConfig.public.webVitals, {
       provider: defaultProvider || options.provider,
       debug: options.debug,
       disabled: options.disabled,
       options: options.options
     })
 
-    nuxt.options.alias.ufo = 'ufo/dist/index.mjs'
-
+    // nuxt.options.alias.ufo = 'ufo/dist/index.mjs'
 
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir)
@@ -70,7 +69,5 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.build.transpile.push(dirname(providerRuntime))
 
     addPlugin(resolve(runtimeDir, 'plugin.client'))
-
-    console.log('`[@nuxtjs/web-vitals]` Module loaded correctly 🚀')
   }
 })
