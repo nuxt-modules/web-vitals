@@ -13,3 +13,8 @@ export const send = (url: string, body?) => {
     console.error('`[@nuxtjs/web-vitals]`', err)
   })
 }
+
+export const getConnectionSpeed = (): string => {
+  // @ts-ignore
+  return (typeof navigator !== 'undefined' && navigator.connection && navigator.connection.effectiveType) || ''
+}

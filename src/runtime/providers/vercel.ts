@@ -1,13 +1,8 @@
 import { RouteContext, WebVitalsMetric } from "../types"
-import { send } from "../utils"
+import { send, getConnectionSpeed } from "../utils"
 import type { ModuleOptions } from '../../module'
 
 const VERCEL_ANALYTICS_URL: string = 'https://vitals.vercel-analytics.com/v1/vitals'
-
-const getConnectionSpeed = (): string => {
-  // @ts-ignore
-  return (typeof navigator !== 'undefined' && navigator.connection && navigator.connection.effectiveType) || ''
-}
 
 export const sendToAnalytics = ({ fullPath, href }: RouteContext, metric: WebVitalsMetric, options: ModuleOptions) => {
   const body = {
