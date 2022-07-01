@@ -25,6 +25,6 @@ export const measureWebVitals = async ({ route, options, sendToAnalytics }: { ro
     getCLS((metric: WebVitalsMetric) => sendToAnalytics(context, metric, options))
     getFCP((metric: WebVitalsMetric) => sendToAnalytics(context, metric, options))
   } catch (err) {
-    console.error('`[@nuxtjs/web-vitals]`', err)
+    console.error('[@nuxtjs/web-vitals]', err)
   }
 }
