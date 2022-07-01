@@ -1,6 +1,5 @@
 import { ModuleOptions } from "../../module"
 import { RouteContext, WebVitalsMetric } from "../types"
-// import { withQuery } from 'ufo'
 import { send } from '../utils'
 
 export const KEY = 'ga:user'

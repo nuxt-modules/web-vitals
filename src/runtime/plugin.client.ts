@@ -1,7 +1,7 @@
 import { defineNuxtPlugin, NuxtApp, useRuntimeConfig } from '#app'
 import { ModuleOptions } from '../module'
 import { RouteContext, WebVitalsMetric } from './types'
-import { sendToAnalytics } from '~vitals-provider'
+import { sendToAnalytics } from '#web-vitals-provider'
 
 export default defineNuxtPlugin(async (nuxtApp: NuxtApp) => {
   nuxtApp.$router.afterEach(to => measureWebVitals({

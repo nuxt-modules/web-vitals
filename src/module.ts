@@ -65,7 +65,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     const providerRuntime = require.resolve(`./runtime/providers/${options.provider}`)
 
-    nuxt.options.alias['~vitals-provider'] = providerRuntime
+    nuxt.options.alias['#web-vitals-provider'] = providerRuntime
     nuxt.options.build.transpile.push(dirname(providerRuntime))
 
     addPlugin(resolve(runtimeDir, 'plugin.client'))
