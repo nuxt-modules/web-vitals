@@ -1,4 +1,4 @@
-import { ModuleOptions } from "../../module"
+import type { ModuleOptions } from "../../module"
 import { RouteContext, WebVitalsMetric } from "../types"
 import { send } from '../utils'
 
