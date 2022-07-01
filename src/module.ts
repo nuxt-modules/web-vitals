@@ -1,6 +1,6 @@
-import { resolve, dirname } from 'path'
+import { dirname } from 'path'
 import { fileURLToPath } from 'url'
-import { defineNuxtModule, addPlugin } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
 import defu from 'defu'
 
 type AnalyticsProvider = 'log' | 'vercel' | 'ga'
@@ -36,6 +36,8 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
+    const { resolve } = createResolver(import.meta.url)
+
     let defaultProvider: AnalyticsProvider;
 
     if (!options.provider || (options.provider !== 'ga' && options.provider !== 'vercel')) {
@@ -58,12 +60,10 @@ export default defineNuxtModule<ModuleOptions>({
       options: options.options
     })
 
-    // nuxt.options.alias.ufo = 'ufo/dist/index.mjs'
-
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir)
 
-    const providerRuntime = require.resolve(`./runtime/providers/${options.provider}`)
+    const providerRuntime = resolve(`./runtime/providers/${options.provider}`)
 
     nuxt.options.alias['#web-vitals-provider'] = providerRuntime
     nuxt.options.build.transpile.push(dirname(providerRuntime))
