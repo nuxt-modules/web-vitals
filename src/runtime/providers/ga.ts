@@ -1,5 +1,5 @@
 import type { ModuleOptions } from "../../module"
-import { RouteContext, WebVitalsMetric } from "../types"
+import type { RouteContext, WebVitalsMetric } from "../types"
 import { send } from '../utils'
 
 export const KEY = 'ga:user'
