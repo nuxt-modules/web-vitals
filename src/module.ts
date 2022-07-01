@@ -41,7 +41,6 @@ export default defineNuxtModule<ModuleOptions>({
     let defaultProvider: AnalyticsProvider;
 
     if (!options.provider || (options.provider !== 'ga' && options.provider !== 'vercel')) {
-      defaultProvider = 'log'
       console.warn('`[@nuxtjs/web-vitals]` No Analytics providers selected. Using built in `log`')
     }
 

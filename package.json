@@ -52,9 +52,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/nuxt-community/web-vitals-module#readme",
-  "directories": {
-    "doc": "docs",
-    "example": "playground"
-  }
+  "homepage": "https://github.com/nuxt-community/web-vitals-module#readme"
 }
