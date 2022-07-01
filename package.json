@@ -39,7 +39,7 @@
     "lint": "eslint --ext .js,.ts,.vue"
   },
   "dependencies": {
-    "@nuxt/kit": "3.0.0-rc.4",
+    "@nuxt/kit": "^3.0.0-rc.4",
     "web-vitals": "^2.1.0"
   },
   "devDependencies": {
