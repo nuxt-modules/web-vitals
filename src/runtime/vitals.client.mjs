@@ -9,15 +9,16 @@ const sendVitals = (to) => webVitals({
   route: to
 })
 
-export default async function (ctx) {
+export default function (ctx) {
   const router = ctx.app?.router || ctx.$router
   if (!router) { return }
 
   if ('isReady' in router) {
     // vue-router 4
-    await router.isReady()
-    sendVitals(router.currentRoute)
-    router.afterEach((to) => sendVitals(to))
+    router.isReady().then(() => {
+      sendVitals(router.currentRoute)
+      router.afterEach((to) => sendVitals(to))
+    })
   } else {
     // vue-router 3
     router.onReady((to) => {
