@@ -36,7 +36,7 @@
     "test": "yarn lint"
   },
   "dependencies": {
-    "defu": "^5.0.1",
+    "defu": "^6.0.0",
     "ufo": "^0.8.5",
     "web-vitals": "^2.1.4"
   },
