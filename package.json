@@ -37,7 +37,6 @@
   },
   "dependencies": {
     "defu": "^6.0.0",
-    "mlly": "^0.5.5",
     "ufo": "^0.8.5",
     "web-vitals": "^2.1.4"
   },
