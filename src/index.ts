@@ -1,8 +1,9 @@
 import { resolve, dirname } from 'path'
 import defu from 'defu'
+import { resolvePath } from 'mlly'
 import { PROVIDERS } from './providers'
 
-function webVitalsModule () {
+async function webVitalsModule () {
   const { nuxt } = this
 
   const options = defu(nuxt.options.webVitals, {
@@ -64,7 +65,7 @@ function webVitalsModule () {
   nuxt.options.alias['~vitals-provider'] = provider.runtime
 
   // Workaround for nuxt < 2.16.0
-  nuxt.options.alias.ufo = 'ufo/dist/index.mjs'
+  nuxt.options.alias.ufo = await resolvePath('ufo/dist/index.mjs')
 
   this.addPlugin({
     src: resolve(__dirname, './runtime/vitals.client.mjs'),
