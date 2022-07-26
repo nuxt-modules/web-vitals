@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.10](https://github.com/nuxt-community/web-vitals-module/compare/v0.1.9...v0.1.10) (2022-07-26)
+
+
+### Bug Fixes
+
+* resolve `ufo` path absolutely ([#51](https://github.com/nuxt-community/web-vitals-module/issues/51)) ([31e54ef](https://github.com/nuxt-community/web-vitals-module/commit/31e54ef803ed3b76c9559f9f11233f1afa29e6e5))
+
 ### [0.1.9](https://github.com/nuxt-community/web-vitals-module/compare/v0.1.8...v0.1.9) (2022-07-26)
 
 
