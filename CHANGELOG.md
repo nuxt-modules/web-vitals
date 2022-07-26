@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.9](https://github.com/nuxt-community/web-vitals-module/compare/v0.1.8...v0.1.9) (2022-07-26)
+
+
+### Bug Fixes
+
+* handle nuxt 3 and vue-router 4x api ([#49](https://github.com/nuxt-community/web-vitals-module/issues/49)) ([a1ac506](https://github.com/nuxt-community/web-vitals-module/commit/a1ac506c050c857ef3820845abd567dc76834d86))
+
 ### [0.1.8](https://github.com/nuxt-community/web-vitals-module/compare/v0.1.7...v0.1.8) (2021-08-24)
 
 
