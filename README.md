@@ -21,7 +21,7 @@ Add `@nuxtjs/web-vitals` to the `buildModules` section of your `nuxt.config.js`
 export default {
   buildModules: [
     '@nuxtjs/web-vitals'
-  }
+  ]
 }
 ```
 
