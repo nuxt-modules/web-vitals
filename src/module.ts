@@ -3,6 +3,19 @@ import { defu } from 'defu'
 import { defineNuxtModule, addPlugin, addTemplate, createResolver, isNuxt2 } from '@nuxt/kit'
 import { PROVIDERS } from './providers'
 
+export interface ModuleOptions {
+  provider: 'auto' | 'log' | 'ga' | 'vercel'
+  debug: boolean
+  disabled: boolean
+  googleAnalytics: {
+    id: string
+  }
+}
+
+declare module '@nuxt/schema' {
+  interface NuxtConfig { ['googleAnalytics']?: { id?: string } }
+}
+
 export default defineNuxtModule({
   meta: {
     name: 'web-vitals',
@@ -12,7 +25,7 @@ export default defineNuxtModule({
     }
   },
   defaults: {
-    provider: '',
+    provider: 'auto',
     debug: false,
     disabled: false
   },
@@ -35,37 +48,37 @@ export default defineNuxtModule({
 
     let provider
 
-    if (options.provider) {
-      provider = resolveProvider(options.provider, (options as any)[options.provider])
-    } else {
     // Auto detect provider
+    if (options.provider === 'auto') {
+      // Try to validate each provider
       for (const _provider of PROVIDERS) {
-        if (_provider.autoDetect === false) {
-          continue
-        }
+        if (_provider.autoDetect === false) { continue }
         try {
           provider = resolveProvider(_provider.name, (options as any)[_provider.name])
           // eslint-disable-next-line no-console
           console.info('[@nuxtjs/web-vitals] Auto detected provider:', provider.name)
           break
         } catch (err) {
-        // Ignore error on auto detection
+          // Ignore error on auto detection
         }
       }
-    }
-    if (!provider) {
-      if (nuxt.options.dev && options.debug) {
-        provider = resolveProvider('log')
-      } else {
-      // eslint-disable-next-line no-console
-        console.warn('[@nuxtjs/web-vitals] Please define a provider to activate this module')
-        return
+      // Fallback
+      if (!provider) {
+        if (nuxt.options.dev && options.debug) {
+          provider = resolveProvider('log')
+        } else {
+          // eslint-disable-next-line no-console
+          console.warn('[@nuxtjs/web-vitals] Please define a provider to activate this module.')
+          return
+        }
       }
+    } else {
+      provider = resolveProvider(options.provider, (options as any)[options.provider])
     }
+
     provider.runtime = resolver.resolve(provider.runtime)
     nuxt.options.build.transpile.push(dirname(provider.runtime))
     nuxt.options.alias['~web-vitals-provider'] = provider.runtime
-
     nuxt.options.build.transpile.push(resolver.resolve('./runtime'))
 
     const runtimeOptions = { debug: options.debug, ...provider.options }

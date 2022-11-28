@@ -5,9 +5,8 @@ export default defineNuxtConfig({
     '../src/module'
   ],
   webVitals: {
+    // provider: 'log',
     debug: true
   }
-  // googleAnalytics: {
-  //   id: 'hello'
-  // }
+  // googleAnalytics: { id: '123' }
 })

@@ -15,7 +15,7 @@ export const PROVIDERS = [
     }),
     validate ({ id }) {
       if (!id) {
-        throw new Error('[@nuxtjs/web-vitals] googleAnalytics.id is required for Google Analytics integration')
+        throw new Error('[@nuxtjs/web-vitals] `googleAnalytics.id` is required for Google Analytics integration')
       }
     }
   },
@@ -27,7 +27,7 @@ export const PROVIDERS = [
     }),
     validate ({ dsn }) {
       if (!dsn) {
-        throw new Error('[@nuxtjs/web-vitals] vercel.dsn or VERCEL_ANALYTICS_ID environment is required for Vercel integration')
+        throw new Error('[@nuxtjs/web-vitals] `vercel.dsn` or `VERCEL_ANALYTICS_ID` environment is required for Vercel integration')
       }
     }
   }
