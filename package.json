@@ -15,7 +15,7 @@
     "lcp",
     "ttfb"
   ],
-  "repository": "nuxt-community/web-vitals-module",
+  "repository": "nuxt-modules/web-vitals",
   "license": "MIT",
   "exports": {
     ".": "./dist/index.js",
