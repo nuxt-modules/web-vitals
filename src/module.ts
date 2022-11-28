@@ -28,7 +28,7 @@ export default defineNuxtModule({
     debug: false,
     disabled: false
   },
-  setup (options, nuxt) {
+  async setup (options, nuxt) {
     if (options.disabled) {
       return
     }
@@ -85,6 +85,7 @@ export default defineNuxtModule({
 
     if (isNuxt2()) {
       nuxt.options.alias['#build/web-vitals-config.mjs'] = join(nuxt.options.buildDir, 'web-vitals-config.mjs')
+      nuxt.options.alias.ufo = await resolver.resolvePath('ufo/dist/index.mjs')
       addPlugin(resolver.resolve('./runtime/plugin.nuxt2.client.mjs'))
     } else {
       addPlugin(resolver.resolve('./runtime/plugin.client'))
