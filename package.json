@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "defu": "^6.0.0",
-    "ufo": "^0.8.5",
+    "ufo": "^1.0.0",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
