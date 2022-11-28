@@ -1,5 +1,10 @@
 export const KEY = 'ga:user'
-export const UID: string = (localStorage[KEY] = localStorage[KEY] || Math.random() + '.' + Math.random())
+export let UID = "";
+try {
+  UID = (localStorage[KEY] = localStorage[KEY] || Math.random() + '.' + Math.random())
+} catch (err) {
+  logError("Web Vitals GA Integration Disabled " + err.message)
+}
 
 export function logError (err) {
   console.error('[nuxt vitals]', err) // eslint-disable-line no-console
