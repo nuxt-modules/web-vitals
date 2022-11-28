@@ -32,7 +32,7 @@
     "dev": "nuxt dev playground",
     "dev:build": "nuxt build playground",
     "lint": "eslint --ext .ts .",
-    "release": "pnpm test && standard-version && npm publish && git push --follow-tags",
+    "release": "pnpm test && pnpm build && standard-version && npm publish && git push --follow-tags",
     "test": "pnpm lint"
   },
   "dependencies": {
