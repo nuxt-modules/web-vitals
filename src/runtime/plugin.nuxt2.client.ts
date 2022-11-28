@@ -10,7 +10,7 @@ const sendVitals = to => webVitals({
 })
 
 export default function (ctx) {
-  const router = ctx.app?.router || ctx.$router
+  const router = (ctx.app && ctx.app.router) || ctx.$router
   if (!router) { return }
   router.onReady((to) => {
     sendVitals(to)
