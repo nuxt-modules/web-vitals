@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build"
+  },
+  "devDependencies": {
+    "nuxt": "^2.15.8"
+  }
+}
