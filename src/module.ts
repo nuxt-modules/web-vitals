@@ -1,0 +1,81 @@
+import { dirname, join } from 'pathe'
+import { defu } from 'defu'
+import { defineNuxtModule, addPlugin, addTemplate, createResolver, isNuxt2 } from '@nuxt/kit'
+import { PROVIDERS } from './providers'
+
+export default defineNuxtModule({
+  meta: {
+    name: 'web-vitals',
+    configKey: 'webVitals',
+    compatibility: {
+      nuxt: '^3.0.0 || ^2.15.0'
+    }
+  },
+  defaults: {
+    provider: '',
+    debug: false,
+    disabled: false
+  },
+  setup (options, nuxt) {
+    if (options.disabled) {
+      return
+    }
+
+    const resolver = createResolver(import.meta.url)
+
+    const resolveProvider = (providerName: string, userOptions = {}) => {
+      const provider: any = PROVIDERS.find(p => p.name === providerName)
+      if (!provider) {
+        throw new Error('Provider not found: ' + providerName)
+      }
+      provider.options = defu(userOptions, provider.defaults(nuxt.options))
+      provider.validate(provider.options)
+      return provider
+    }
+
+    let provider
+
+    if (options.provider) {
+      provider = resolveProvider(options.provider, (options as any)[options.provider])
+    } else {
+    // Auto detect provider
+      for (const _provider of PROVIDERS) {
+        if (_provider.autoDetect === false) {
+          continue
+        }
+        try {
+          provider = resolveProvider(_provider.name, (options as any)[_provider.name])
+          // eslint-disable-next-line no-console
+          console.info('[@nuxtjs/web-vitals] Auto detected provider:', provider.name)
+          break
+        } catch (err) {
+        // Ignore error on auto detection
+        }
+      }
+    }
+    if (!provider) {
+      if (nuxt.options.dev && options.debug) {
+        provider = resolveProvider('log')
+      } else {
+      // eslint-disable-next-line no-console
+        console.warn('[@nuxtjs/web-vitals] Please define a provider to activate this module')
+        return
+      }
+    }
+    provider.runtime = resolver.resolve(provider.runtime)
+    nuxt.options.build.transpile.push(dirname(provider.runtime))
+    nuxt.options.alias['~web-vitals-provider'] = provider.runtime
+
+    nuxt.options.build.transpile.push(resolver.resolve('./runtime'))
+
+    const runtimeOptions = { debug: options.debug, ...provider.options }
+    addTemplate({ filename: 'web-vitals-config.mjs', getContents: () => `export default ${JSON.stringify(runtimeOptions, null, 2)}` })
+
+    if (isNuxt2()) {
+      nuxt.options.alias['#build/web-vitals-config.mjs'] = join(nuxt.options.buildDir, 'web-vitals-config.mjs')
+      addPlugin(resolver.resolve('./runtime/plugin.nuxt2.client.mjs'))
+    } else {
+      addPlugin(resolver.resolve('./runtime/plugin.client'))
+    }
+  }
+})
