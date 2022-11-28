@@ -7,9 +7,8 @@ export interface ModuleOptions {
   provider: 'auto' | 'log' | 'ga' | 'vercel'
   debug: boolean
   disabled: boolean
-  googleAnalytics: {
-    id: string
-  }
+  ga: { id: string }
+  vercel: { dsn: string }
 }
 
 declare module '@nuxt/schema' {
