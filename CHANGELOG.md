@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/nuxt-modules/web-vitals/compare/v0.1.10...v0.2.0) (2022-11-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* nuxt 3 compatibility (#59)
+
+### Features
+
+* nuxt 3 compatibility ([#59](https://github.com/nuxt-modules/web-vitals/issues/59)) ([b400160](https://github.com/nuxt-modules/web-vitals/commit/b4001603dd9d4e8b482edb56aeda41f10a2f4f1a))
+
+
+### Bug Fixes
+
+* nuxt 2 plugin syntax usage ([f241654](https://github.com/nuxt-modules/web-vitals/commit/f2416543f7bb8d2332671190c7d297ef30cffa11))
+
 ### [0.1.10](https://github.com/nuxt-modules/web-vitals/compare/v0.1.9...v0.1.10) (2022-07-26)
 
 
