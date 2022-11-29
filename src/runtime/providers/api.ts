@@ -7,7 +7,7 @@ export interface Options {
 
 export function sendToAnalytics ({ fullPath, href }, metric, options: Options) {
   const body = {
-    page: fullPath,
+    path: fullPath,
     href,
     ...metric
   }
