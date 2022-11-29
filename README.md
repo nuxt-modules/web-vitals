@@ -2,7 +2,7 @@
 
 > Web Vitals: Essential module for a healthy [Nuxt.js](https://github.com/nuxt/nuxt.js)
 
-[Web Vitals](https://web.dev/vitals) is an initiative by Google to provide unified guidance for quality signals that are essential to delivering a great user experience on the web.  
+[Web Vitals](https://web.dev/vitals) is an initiative by Google to provide unified guidance for quality signals that are essential to delivering a great user experience on the web.
 This module will gather those metrics on each page view, and send them to a provider using either [`Navigator.sendBeacon()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) or [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
 ## Installation
@@ -72,7 +72,7 @@ Works without configuration
 
 _Report WebVitals to Console_
 
-Output metrics to the console insead of sending them to a remote provider 
+Output metrics to the console insead of sending them to a remote provider
 
 ```js
 {
@@ -85,6 +85,47 @@ Output metrics to the console insead of sending them to a remote provider
 ```
 
 :warning: this provider does not send WebVitals trough network, issues with navigator extensions can not be deteced with this method.
+
+### Logging to custom api
+
+_Report WebVitals to a custom api endpoint_
+
+```js
+export default {
+  webVitals: {
+    provider: 'api',
+    api: { url: '/api/web-vitals' }
+    debug: true // debug enable metrics reporting on dev environments
+  }
+```
+
+Example body:
+
+```js
+{
+  href: 'http://localhost:3000/',
+  name: 'LCP',
+  value: 303.599,
+  rating: 'good',
+  delta: 303.599,
+  entries: [
+    {
+      name: '',
+      entryType: 'largest-contentful-paint',
+      startTime: 303.599,
+      duration: 0,
+      size: 5698,
+      renderTime: 303.599,
+      loadTime: 0,
+      firstAnimatedFrameTime: 0,
+      id: '',
+      url: ''
+    }
+  ],
+  id: 'v3-1669725914225-9792921995831',
+  navigationType: 'reload'
+}
+```
 
 ### License
 
