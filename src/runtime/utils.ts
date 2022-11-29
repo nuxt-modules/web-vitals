@@ -1,5 +1,17 @@
 export const KEY = 'ga:user'
-export const UID: string = (localStorage[KEY] = localStorage[KEY] || Math.random() + '.' + Math.random())
+export const UID = _getUID()
+
+function _getUID () {
+  let uid
+  // Try to restore from localStorage
+  try { uid = localStorage[KEY] } catch { }
+  if (!uid) {
+    uid = Math.random() + '.' + Math.random()
+    // Try to save to localStorage
+    try { localStorage[KEY] = uid } catch { }
+  }
+  return uid
+}
 
 export function logError (err) {
   console.error('[nuxt vitals]', err) // eslint-disable-line no-console

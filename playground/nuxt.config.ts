@@ -1,23 +1,13 @@
-// import { NuxtConfig } from '@nuxt/types'
-import webVitals
-  from '../src'
+import { defineNuxtConfig } from 'nuxt/config'
 
-export default {
-  buildModules: [
-    'nuxt-swc',
-    webVitals
+export default defineNuxtConfig({
+  modules: [
+    '../src/module'
   ],
-
   webVitals: {
+    // provider: 'log',
+    // api: { url: '/api/web-vitals' }
+    // ga: { id: 123 },
     debug: true
   }
-
-  // googleAnalytics: {
-  //   id: 'hello'
-  // }
-
-  // api: {
-  //   url: '/analytics'
-  // },
-  // serverMiddleware: ['~/api/analytics'],
-}
+})
