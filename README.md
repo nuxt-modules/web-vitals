@@ -86,21 +86,44 @@ Output metrics to the console insead of sending them to a remote provider
 
 :warning: this provider does not send WebVitals trough network, issues with navigator extensions can not be deteced with this method.
 
-### Logging to an api
+### Logging to custom api
 
-_Report WebVitals to an endpoint_
-
-Output metrics are send to an enpoint.
+_Report WebVitals to a custom api endpoint_
 
 ```js
 export default {
   webVitals: {
     provider: 'api',
+    api: { url: '/api/web-vitals' }
     debug: true // debug enable metrics reporting on dev environments
-  },
-  api: {
-    url: 'xxxxx' // add the endpoint to which data needs to be send
   }
+```
+
+Example body:
+
+```js
+{
+  href: 'http://localhost:3000/',
+  name: 'LCP',
+  value: 303.599,
+  rating: 'good',
+  delta: 303.599,
+  entries: [
+    {
+      name: '',
+      entryType: 'largest-contentful-paint',
+      startTime: 303.599,
+      duration: 0,
+      size: 5698,
+      renderTime: 303.599,
+      loadTime: 0,
+      firstAnimatedFrameTime: 0,
+      id: '',
+      url: ''
+    }
+  ],
+  id: 'v3-1669725914225-9792921995831',
+  navigationType: 'reload'
 }
 ```
 

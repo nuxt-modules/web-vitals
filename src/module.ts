@@ -4,15 +4,19 @@ import { defineNuxtModule, addPlugin, addTemplate, createResolver, isNuxt2 } fro
 import { PROVIDERS } from './providers'
 
 export interface ModuleOptions {
-  provider: 'auto' | 'log' | 'ga' | 'vercel'
+  provider: 'auto' | 'log' | 'ga' | 'vercel' | 'api'
   debug: boolean
   disabled: boolean
   ga: { id: string }
   vercel: { dsn: string }
+  api: { url: string }
 }
 
 declare module '@nuxt/schema' {
-  interface NuxtConfig { ['googleAnalytics']?: { id?: string } }
+  interface NuxtConfig {
+    ['googleAnalytics']?: { id?: string }
+    ['webVitals']?: Partial<ModuleOptions>
+   }
 }
 
 export default defineNuxtModule({

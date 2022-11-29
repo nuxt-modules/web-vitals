@@ -33,12 +33,10 @@ export const PROVIDERS = [
   },
   {
     name: 'api',
-    runtime: require.resolve('./runtime/providers/api'),
-    defaults: nuxtOptions => ({
-      url: (nuxtOptions.api && nuxtOptions.api.url)
-    }),
+    runtime: './runtime/providers/api',
+    defaults: () => ({}),
     validate ({ url }) {
-      if(!url) {
+      if (!url) {
         throw new Error('[@nuxtjs/web-vitals] api.url is required for API integration')
       }
     }

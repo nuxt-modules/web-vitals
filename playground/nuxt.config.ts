@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   ],
   webVitals: {
     // provider: 'log',
-    // api: { url: '/api/web-vitals' }
+    api: { url: '/api/web-vitals' },
     // ga: { id: 123 },
     debug: true
   }
