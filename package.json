@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/web-vitals",
-  "version": "0.1.10",
+  "version": "0.2.1",
   "description": "Web Vitals for Nuxt.js",
   "keywords": [
     "nuxt",
@@ -15,40 +15,39 @@
     "lcp",
     "ttfb"
   ],
-  "repository": "nuxt-community/web-vitals-module",
+  "repository": "nuxt-modules/web-vitals",
   "license": "MIT",
   "exports": {
-    ".": "./dist/index.js",
-    "./*": "./*",
-    "./dist/runtime/*": "./dist/runtime/*.mjs"
+    ".": "./dist/module.mjs",
+    "./*": "./*"
   },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/module.cjs",
+  "types": "./dist/module.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "siroc build",
-    "dev": "nuxt playground",
+    "build": "nuxt build-module",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "dev": "nuxt dev playground",
+    "dev:build": "nuxt build playground",
     "lint": "eslint --ext .ts .",
-    "prepublishOnly": "yarn build",
-    "release": "yarn test && standard-version && npm publish && git push --follow-tags",
-    "test": "yarn lint"
+    "release": "pnpm test && pnpm build && standard-version && npm publish && git push --follow-tags",
+    "test": "pnpm lint"
   },
   "dependencies": {
+    "@nuxt/kit": "^3.0.0",
     "defu": "^6.1.1",
+    "pathe": "^1.0.0",
     "ufo": "^1.0.0",
     "web-vitals": "^3.1.0"
   },
   "devDependencies": {
-    "@nuxt/types": "latest",
-    "@nuxtjs/eslint-config-typescript": "latest",
-    "babel-eslint": "latest",
-    "eslint": "latest",
-    "nuxt-edge": "latest",
-    "nuxt-swc": "latest",
-    "siroc": "latest",
-    "standard-version": "latest",
-    "typescript": "latest"
+    "@nuxt/module-builder": "^0.2.1",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "eslint": "^8.28.0",
+    "nuxt": "^3.0.0",
+    "standard-version": "^9.5.0",
+    "typescript": "^4.9.3"
   }
 }
