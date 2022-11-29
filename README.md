@@ -49,10 +49,12 @@ Create a GA property and get `trackingID`
 
 Either provide `GOOGLE_ANALYTICS_ID` environement variable or set inside `nuxt.config`:
 
+(Top level `googleAnalytics.id` is supported for backward compatibility as fallback)
+
 ```js
 export default {
-  googleAnalytics: {
-    id: 'UA-XXXXXXXX-X'
+  webVitals: {
+    ga: { id: 'UA-XXXXXXXX-X' }
   }
 }
 ```
