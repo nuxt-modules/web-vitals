@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/nuxt-modules/web-vitals/compare/v0.2.0...v0.2.1) (2022-11-29)
+
+
+### Bug Fixes
+
+* resolve `ufo` for nuxt 2 support ([192b409](https://github.com/nuxt-modules/web-vitals/commit/192b409870f0afdb093e0889320e43fb78102f84))
+
 ## [0.2.0](https://github.com/nuxt-modules/web-vitals/compare/v0.1.10...v0.2.0) (2022-11-28)
 
 
