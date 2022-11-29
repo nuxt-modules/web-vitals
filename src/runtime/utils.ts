@@ -1,9 +1,16 @@
 export const KEY = 'ga:user'
-export let UID = "";
-try {
-  UID = (localStorage[KEY] = localStorage[KEY] || Math.random() + '.' + Math.random())
-} catch (err) {
-  logError("Web Vitals GA Integration Disabled " + err.message)
+export const UID = _getUID()
+
+function _getUID () {
+  let uid
+  // Try to restore from localStorage
+  try { uid = localStorage[KEY] } catch { }
+  if (!uid) {
+    uid = Math.random() + '.' + Math.random()
+    // Try to save to localStorage
+    try { localStorage[KEY] = uid } catch { }
+  }
+  return uid
 }
 
 export function logError (err) {
