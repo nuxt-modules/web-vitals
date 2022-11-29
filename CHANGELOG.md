@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/nuxt-modules/web-vitals/compare/v0.2.1...v0.2.2) (2022-11-29)
+
+
+### Features
+
+* custom metrics api ([#37](https://github.com/nuxt-modules/web-vitals/issues/37)) ([251a8c6](https://github.com/nuxt-modules/web-vitals/commit/251a8c630bff10489789818da4eea81edca2cd1a))
+
+
+### Bug Fixes
+
+* handle when localstorage is unavailable ([#58](https://github.com/nuxt-modules/web-vitals/issues/58)) ([0d0c423](https://github.com/nuxt-modules/web-vitals/commit/0d0c42319b04055a9546a4e807eef83c9e784fd4)), closes [#56](https://github.com/nuxt-modules/web-vitals/issues/56)
+
 ### [0.2.1](https://github.com/nuxt-modules/web-vitals/compare/v0.2.0...v0.2.1) (2022-11-29)
 
 
