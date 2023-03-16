@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/nuxt-modules/web-vitals/compare/v0.2.2...v0.2.3) (2023-03-16)
+
+
+### Bug Fixes
+
+* pin kit dependency ([#64](https://github.com/nuxt-modules/web-vitals/issues/64)) ([2ad2a97](https://github.com/nuxt-modules/web-vitals/commit/2ad2a97b4b111949d16e59fa2e0a14db79a39087))
+
 ### [0.2.2](https://github.com/nuxt-modules/web-vitals/compare/v0.2.1...v0.2.2) (2022-11-29)
 
 
