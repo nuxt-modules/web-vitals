@@ -36,7 +36,7 @@
     "test": "pnpm lint"
   },
   "dependencies": {
-    "@nuxt/kit": "3.2.3",
+    "@nuxt/kit": "^3.2.3",
     "defu": "^6.1.2",
     "pathe": "^1.1.0",
     "ufo": "^1.1.1",
