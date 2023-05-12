@@ -7,6 +7,12 @@ export const PROVIDERS = [
     validate: () => {}
   },
   {
+    name: 'gtm',
+    runtime: './runtime/providers/gtm',
+    defaults: () => ({}),
+    validate: () => {}
+  },
+  {
     name: 'ga',
     runtime: './runtime/providers/ga',
     defaults: nuxtOptions => ({
