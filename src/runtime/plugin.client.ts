@@ -13,5 +13,4 @@ const sendVitals = to => webVitals({
 export default defineNuxtPlugin(() => {
   const router = useRouter()
   router.afterEach(to => sendVitals(to))
-  router.isReady().then(() => { sendVitals(router.currentRoute) })
 })
