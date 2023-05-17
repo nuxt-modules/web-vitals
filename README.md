@@ -65,6 +65,19 @@ Behavior > Events > Overview > Event Category > Event Action
 ![Events Actions](/assets/event-action.png)
 
 
+_Report WebVitals to GTM_
+
+Create a GTM property and add the tag manager to your site.
+
+```js
+export default defineNuxtConfig({
+  webVitals: {
+    gtm: {}
+  }
+})
+```
+
+
 ### Vercel Analytics
 
 _Report WebVitals to Vercel_
