@@ -9,6 +9,7 @@ export const PROVIDERS = [
   {
     name: 'gtm',
     runtime: './runtime/providers/gtm',
+    autoDetect: false,
     defaults: () => ({}),
     validate: () => {}
   },
