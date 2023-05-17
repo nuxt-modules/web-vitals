@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.6](https://github.com/nuxt-modules/web-vitals/compare/v0.2.5...v0.2.6) (2023-05-17)
+
+
+### Features
+
+* add `gtm` provider ([#67](https://github.com/nuxt-modules/web-vitals/issues/67)) ([757bc1f](https://github.com/nuxt-modules/web-vitals/commit/757bc1f810c38b3b18c38f76ba17b4b890ab31ff))
+
+
+### Bug Fixes
+
+* don't default to `gtm` provider ([9af31c8](https://github.com/nuxt-modules/web-vitals/commit/9af31c81ad741ef185191e6182db235316085b7b))
+* only run `sendVitals` once on initial load ([#66](https://github.com/nuxt-modules/web-vitals/issues/66)) ([d0e408d](https://github.com/nuxt-modules/web-vitals/commit/d0e408db294fb032f93c60cb135c24534688cec7))
+
 ### [0.2.5](https://github.com/nuxt-modules/web-vitals/compare/v0.2.4...v0.2.5) (2023-04-29)
 
 ### [0.2.4](https://github.com/nuxt-modules/web-vitals/compare/v0.2.3...v0.2.4) (2023-03-16)
