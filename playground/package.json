@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "web-vitals-playground",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate"
+  },
+  "devDependencies": {
+    "@nuxtjs/web-vitals": "latest",
+    "nuxt": "latest"
+  }
+}

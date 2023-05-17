@@ -49,5 +49,8 @@
     "nuxt": "^3.5.0",
     "standard-version": "^9.5.0",
     "typescript": "^5.0.4"
+  },
+  "resolutions": {
+    "@nuxtjs/web-vitals": "link:."
   }
 }
