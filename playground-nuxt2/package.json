@@ -5,6 +5,6 @@
     "build": "nuxt build"
   },
   "devDependencies": {
-    "nuxt": "^2.16.3"
+    "nuxt": "^3.5.0"
   }
 }
