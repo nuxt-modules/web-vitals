@@ -1,7 +1,7 @@
 
 import { logError } from './utils'
 
-export async function webVitals({ route, options, sendToAnalytics }) {
+export async function webVitals ({ route, options, sendToAnalytics }) {
   const context = {
     fullPath: route.fullPath,
     href: location.href
