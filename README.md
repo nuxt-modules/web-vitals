@@ -68,11 +68,12 @@ Behavior > Events > Overview > Event Category > Event Action
 _Report WebVitals to GTM_
 
 Create a GTM property and add the tag manager to your site.
+GTM will be detected by condition on window.dataLayer
 
 ```js
 export default defineNuxtConfig({
   webVitals: {
-    gtm: {}
+    provider: 'gtm',
   }
 })
 ```
