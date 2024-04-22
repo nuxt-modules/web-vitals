@@ -9,11 +9,7 @@ This module will gather those metrics on each page view, and send them to a prov
 ## Installation
 
 ```bash
-# yarn
-yarn add --dev @nuxtjs/web-vitals
-
-# npm
-npm install --save-dev @nuxtjs/web-vitals
+npx nuxi@latest module add web-vitals
 ```
 
 Add `@nuxtjs/web-vitals` to the `modules` section of your `nuxt.config.js`
