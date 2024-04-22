@@ -1,24 +1,24 @@
-const eventListeners = []
-// @ts-ignore
+const eventListeners: Array<(event: unknown) => unknown> = []
+// @ts-expect-error untyped window global
 window.onVitalEvent = (listener) => {
   eventListeners.push(listener)
 }
 
-export function sendToAnalytics (context, metric, options: any) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function sendToAnalytics(context, metric, options: any) {
   const event = {
     date: new Date(),
     context,
     metric,
-    options
+    options,
   }
   eventListeners.forEach((listener) => {
     listener(event)
   })
 
-  // eslint-disable-next-line no-console
   console.log('[nuxt vitals]', metric.name, metric.value, context, {
     context,
     metric,
-    options
+    options,
   })
 }

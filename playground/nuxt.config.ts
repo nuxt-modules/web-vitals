@@ -1,12 +1,12 @@
 export default defineNuxtConfig({
   modules: [
-    '../src/module'
+    '../src/module',
   ],
   webVitals: {
     // provider: 'log',
     api: { url: '/api/web-vitals' },
     // ga: { id: 123 },
     // gtm: {},
-    debug: true
-  }
+    debug: true,
+  },
 })

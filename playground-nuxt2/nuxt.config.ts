@@ -1,10 +1,10 @@
 export default {
   buildModules: [
-    require('..')
+    require('..'),
   ],
   webVitals: {
-    debug: true
-  }
+    debug: true,
+  },
   // googleAnalytics: {
   //   id: 'hello'
   // }
