@@ -17,7 +17,7 @@ declare module '@nuxt/schema' {
   interface NuxtConfig {
     ['googleAnalytics']?: { id?: string }
     ['webVitals']?: Partial<ModuleOptions>
-   }
+  }
 }
 
 export default defineNuxtModule({
@@ -25,15 +25,15 @@ export default defineNuxtModule({
     name: 'web-vitals',
     configKey: 'webVitals',
     compatibility: {
-      nuxt: '^3.0.0 || ^2.15.0'
-    }
+      nuxt: '^3.0.0 || ^2.15.0',
+    },
   },
   defaults: {
     provider: 'auto',
     debug: false,
-    disabled: false
+    disabled: false,
   },
-  async setup (options, nuxt) {
+  async setup(options, nuxt) {
     if (options.disabled) {
       return
     }
@@ -41,6 +41,7 @@ export default defineNuxtModule({
     const resolver = createResolver(import.meta.url)
 
     const resolveProvider = (providerName: string, userOptions = {}) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const provider: any = PROVIDERS.find(p => p.name === providerName)
       if (!provider) {
         throw new Error('Provider not found: ' + providerName)
@@ -56,13 +57,17 @@ export default defineNuxtModule({
     if (options.provider === 'auto') {
       // Try to validate each provider
       for (const _provider of PROVIDERS) {
-        if (_provider.autoDetect === false) { continue }
+        if (_provider.autoDetect === false) {
+          continue
+        }
         try {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           provider = resolveProvider(_provider.name, (options as any)[_provider.name])
-          // eslint-disable-next-line no-console
+
           console.info('[@nuxtjs/web-vitals] Auto detected provider:', provider.name)
           break
-        } catch (err) {
+        }
+        catch (err) {
           // Ignore error on auto detection
         }
       }
@@ -70,13 +75,15 @@ export default defineNuxtModule({
       if (!provider) {
         if (nuxt.options.dev && options.debug) {
           provider = resolveProvider('log')
-        } else {
-          // eslint-disable-next-line no-console
+        }
+        else {
           console.warn('[@nuxtjs/web-vitals] Please define a provider to activate this module.')
           return
         }
       }
-    } else {
+    }
+    else {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       provider = resolveProvider(options.provider, (options as any)[options.provider])
     }
 
@@ -92,8 +99,9 @@ export default defineNuxtModule({
       nuxt.options.alias['#build/web-vitals-config.mjs'] = join(nuxt.options.buildDir, 'web-vitals-config.mjs')
       nuxt.options.alias.ufo = await resolver.resolvePath('ufo/dist/index.mjs')
       addPlugin(resolver.resolve('./runtime/plugin.nuxt2.client.mjs'))
-    } else {
+    }
+    else {
       addPlugin(resolver.resolve('./runtime/plugin.client'))
     }
-  }
+  },
 })
