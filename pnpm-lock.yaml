@@ -12,7 +12,7 @@ importers:
   .:
     dependencies:
       '@nuxt/kit':
-        specifier: ^3.5.0
+        specifier: ^3.11.2
         version: 3.11.2(rollup@4.16.2)
       defu:
         specifier: ^6.1.4
@@ -37,7 +37,7 @@ importers:
         specifier: ^9.1.1
         version: 9.1.1
       nuxt:
-        specifier: ^3.5.0
+        specifier: ^3.11.2
         version: 3.11.2(@parcel/watcher@2.4.1)(@types/node@18.16.3)(@unocss/reset@0.59.4)(encoding@0.1.13)(eslint@9.1.1)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.16.2))(vue@3.4.24(typescript@5.4.5)))(ioredis@5.3.2)(meow@8.1.2)(optionator@0.9.3)(rollup@4.16.2)(terser@5.30.4)(typescript@5.4.5)(unocss@0.59.4(postcss@8.4.38)(rollup@4.16.2)(vite@5.2.10(@types/node@18.16.3)(terser@5.30.4)))(vite@5.2.10(@types/node@18.16.3)(terser@5.30.4))
       standard-version:
         specifier: ^9.5.0
