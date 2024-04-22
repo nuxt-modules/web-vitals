@@ -17,7 +17,7 @@ declare module '@nuxt/schema' {
   interface NuxtConfig {
     ['googleAnalytics']?: { id?: string }
     ['webVitals']?: Partial<ModuleOptions>
-   }
+  }
 }
 
 export default defineNuxtModule({
@@ -25,15 +25,15 @@ export default defineNuxtModule({
     name: 'web-vitals',
     configKey: 'webVitals',
     compatibility: {
-      nuxt: '^3.0.0 || ^2.15.0'
-    }
+      nuxt: '^3.0.0 || ^2.15.0',
+    },
   },
   defaults: {
     provider: 'auto',
     debug: false,
-    disabled: false
+    disabled: false,
   },
-  async setup (options, nuxt) {
+  async setup(options, nuxt) {
     if (options.disabled) {
       return
     }
@@ -59,10 +59,11 @@ export default defineNuxtModule({
         if (_provider.autoDetect === false) { continue }
         try {
           provider = resolveProvider(_provider.name, (options as any)[_provider.name])
-          // eslint-disable-next-line no-console
+
           console.info('[@nuxtjs/web-vitals] Auto detected provider:', provider.name)
           break
-        } catch (err) {
+        }
+        catch (err) {
           // Ignore error on auto detection
         }
       }
@@ -70,13 +71,14 @@ export default defineNuxtModule({
       if (!provider) {
         if (nuxt.options.dev && options.debug) {
           provider = resolveProvider('log')
-        } else {
-          // eslint-disable-next-line no-console
+        }
+        else {
           console.warn('[@nuxtjs/web-vitals] Please define a provider to activate this module.')
           return
         }
       }
-    } else {
+    }
+    else {
       provider = resolveProvider(options.provider, (options as any)[options.provider])
     }
 
@@ -92,8 +94,9 @@ export default defineNuxtModule({
       nuxt.options.alias['#build/web-vitals-config.mjs'] = join(nuxt.options.buildDir, 'web-vitals-config.mjs')
       nuxt.options.alias.ufo = await resolver.resolvePath('ufo/dist/index.mjs')
       addPlugin(resolver.resolve('./runtime/plugin.nuxt2.client.mjs'))
-    } else {
+    }
+    else {
       addPlugin(resolver.resolve('./runtime/plugin.client'))
     }
-  }
+  },
 })

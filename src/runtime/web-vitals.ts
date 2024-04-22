@@ -1,10 +1,9 @@
-
 import { logError } from './utils'
 
-export async function webVitals ({ route, options, sendToAnalytics }) {
+export async function webVitals({ route, options, sendToAnalytics }) {
   const context = {
     fullPath: route.fullPath,
-    href: location.href
+    href: location.href,
   }
 
   // TODO: get page path
@@ -19,7 +18,8 @@ export async function webVitals ({ route, options, sendToAnalytics }) {
     getLCP(metric => sendToAnalytics(context, metric, options))
     getCLS(metric => sendToAnalytics(context, metric, options))
     getFCP(metric => sendToAnalytics(context, metric, options))
-  } catch (err) {
+  }
+  catch (err) {
     logError(err)
   }
 }

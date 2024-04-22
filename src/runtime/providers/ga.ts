@@ -11,23 +11,23 @@ export interface Options {
 
 // https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#dl
 
-export function sendToAnalytics ({ fullPath, href }, metric, options: Options) {
+export function sendToAnalytics({ fullPath, href }, metric, options: Options) {
   const opts = {
     ec: options.eventCategory,
     ea: metric.name as string,
     el: metric.id as string,
     // Google Analytics metrics must be integers, so the value is rounded.
-    ev: parseInt(metric.delta) + '',
+    ev: Number.parseInt(metric.delta) + '',
     dl: fullPath as string,
     dh: href as string,
-    ni: 'true'
+    ni: 'true',
   }
 
   // Calculate the request time by subtracting from TTFB
   // everything that happened prior to the request starting.
   if (metric.name === 'TTFB') {
-    // @ts-ignore
-    opts.ev = parseInt(metric.delta - metric.entries[0].requestStart)
+    // @ts-expect-error
+    opts.ev = Number.parseInt(metric.delta - metric.entries[0].requestStart)
   }
 
   const url = withQuery(googleAnalyticsURL, {
@@ -36,7 +36,7 @@ export function sendToAnalytics ({ fullPath, href }, metric, options: Options) {
     tid: options.id,
     cid: UID,
     ...opts,
-    z: Date.now() + ''
+    z: Date.now() + '',
   })
 
   send(url)

@@ -7,7 +7,7 @@ export interface Options {
 
 const vitalsUrl = 'https://vitals.vercel-analytics.com/v1/vitals'
 
-export function sendToAnalytics ({ fullPath, href }, metric, options: Options) {
+export function sendToAnalytics({ fullPath, href }, metric, options: Options) {
   const body = {
     dsn: options.dsn,
     id: metric.id,
@@ -15,7 +15,7 @@ export function sendToAnalytics ({ fullPath, href }, metric, options: Options) {
     href,
     event_name: metric.name,
     value: metric.value.toString(),
-    speed: getConnectionSpeed()
+    speed: getConnectionSpeed(),
   }
 
   if (options.debug) {
@@ -24,7 +24,7 @@ export function sendToAnalytics ({ fullPath, href }, metric, options: Options) {
 
   // This content type is necessary for `sendBeacon`
   const blob = new Blob([new URLSearchParams(body).toString()], {
-    type: 'application/x-www-form-urlencoded'
+    type: 'application/x-www-form-urlencoded',
   })
 
   send(vitalsUrl, blob)
