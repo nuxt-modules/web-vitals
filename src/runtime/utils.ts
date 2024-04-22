@@ -4,13 +4,21 @@ export const UID = _getUID()
 function _getUID() {
   let uid
   // Try to restore from localStorage
-  try { uid = localStorage[KEY] }
-  catch { }
+  try {
+    uid = localStorage[KEY]
+  }
+  catch {
+    //
+  }
   if (!uid) {
     uid = Math.random() + '.' + Math.random()
     // Try to save to localStorage
-    try { localStorage[KEY] = uid }
-    catch { }
+    try {
+      localStorage[KEY] = uid
+    }
+    catch {
+      //
+    }
   }
   return uid
 }
@@ -24,7 +32,7 @@ export function logDebug(label, ...args) {
 }
 
 export function getConnectionSpeed(): string {
-  // @ts-expect-error
+  // @ts-expect-error connection does not exist on navigator
   return (typeof navigator !== 'undefined' && navigator.connection && navigator.connection.effectiveType) || ''
 }
 

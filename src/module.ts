@@ -41,6 +41,7 @@ export default defineNuxtModule({
     const resolver = createResolver(import.meta.url)
 
     const resolveProvider = (providerName: string, userOptions = {}) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const provider: any = PROVIDERS.find(p => p.name === providerName)
       if (!provider) {
         throw new Error('Provider not found: ' + providerName)
@@ -56,8 +57,11 @@ export default defineNuxtModule({
     if (options.provider === 'auto') {
       // Try to validate each provider
       for (const _provider of PROVIDERS) {
-        if (_provider.autoDetect === false) { continue }
+        if (_provider.autoDetect === false) {
+          continue
+        }
         try {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           provider = resolveProvider(_provider.name, (options as any)[_provider.name])
 
           console.info('[@nuxtjs/web-vitals] Auto detected provider:', provider.name)
@@ -79,6 +83,7 @@ export default defineNuxtModule({
       }
     }
     else {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       provider = resolveProvider(options.provider, (options as any)[options.provider])
     }
 

@@ -2,7 +2,7 @@ import { logError, logDebug, getConnectionSpeed } from '../utils'
 
 declare global {
   interface Window {
-    dataLayer?: any[]
+    dataLayer?: unknown[]
   }
 }
 

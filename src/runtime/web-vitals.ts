@@ -12,6 +12,7 @@ export async function webVitals({ route, options, sendToAnalytics }) {
   // }
 
   try {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { getCLS, getFID, getLCP, getTTFB, getFCP } = await import('web-vitals').then((r: any) => r.default || r)
     getFID(metric => sendToAnalytics(context, metric, options))
     getTTFB(metric => sendToAnalytics(context, metric, options))

@@ -26,7 +26,7 @@ export function sendToAnalytics({ fullPath, href }, metric, options: Options) {
   // Calculate the request time by subtracting from TTFB
   // everything that happened prior to the request starting.
   if (metric.name === 'TTFB') {
-    // @ts-expect-error
+    // @ts-expect-error coersion of number to string
     opts.ev = Number.parseInt(metric.delta - metric.entries[0].requestStart)
   }
 

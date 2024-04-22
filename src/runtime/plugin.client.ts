@@ -1,7 +1,7 @@
 import { webVitals } from './web-vitals'
 import { defineNuxtPlugin, useRouter } from '#imports'
 import { sendToAnalytics } from '~web-vitals-provider'
-// @ts-expect-error
+// @ts-expect-error virtual module
 import webVitalsOptions from '#build/web-vitals-config.mjs'
 
 const sendVitals = to => webVitals({
