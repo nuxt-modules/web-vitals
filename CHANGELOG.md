@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.7](https://github.com/nuxt-modules/web-vitals/compare/v0.2.6...v0.2.7) (2024-04-22)
+
+
+### Features
+
+* track INP vitals ([#73](https://github.com/nuxt-modules/web-vitals/issues/73)) ([99ac126](https://github.com/nuxt-modules/web-vitals/commit/99ac1267cc876eaa0300ebc70afc1dfa36764fd7))
+
+
+### Bug Fixes
+
+* use non-deprecated `werb-vitals` functions ([eb37fd6](https://github.com/nuxt-modules/web-vitals/commit/eb37fd60c5e668ba5137294da0c49bf2b29dd3bd))
+
 ### [0.2.6](https://github.com/nuxt-modules/web-vitals/compare/v0.2.5...v0.2.6) (2023-05-17)
 
 

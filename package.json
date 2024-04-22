@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/web-vitals",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Web Vitals for Nuxt.js",
   "keywords": [
     "nuxt",
