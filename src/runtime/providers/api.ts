@@ -5,11 +5,11 @@ export interface Options {
   url: string
 }
 
-export function sendToAnalytics ({ fullPath, href }, metric, options: Options) {
+export function sendToAnalytics({ fullPath, href }, metric, options: Options) {
   const body = {
     path: fullPath,
     href,
-    ...metric
+    ...metric,
   }
 
   if (options.debug) {
@@ -17,7 +17,7 @@ export function sendToAnalytics ({ fullPath, href }, metric, options: Options) {
   }
 
   const blob = new Blob([JSON.stringify(body)], {
-    type: 'application/json'
+    type: 'application/json',
   })
 
   send(options.url, blob)

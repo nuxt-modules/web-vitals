@@ -1,10 +1,9 @@
-
 import { logError } from './utils'
 
-export async function webVitals ({ route, options, sendToAnalytics }) {
+export async function webVitals({ route, options, sendToAnalytics }) {
   const context = {
     fullPath: route.fullPath,
-    href: location.href
+    href: location.href,
   }
 
   // TODO: get page path
@@ -13,13 +12,15 @@ export async function webVitals ({ route, options, sendToAnalytics }) {
   // }
 
   try {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { getCLS, getFID, getLCP, getTTFB, getFCP } = await import('web-vitals').then((r: any) => r.default || r)
     getFID(metric => sendToAnalytics(context, metric, options))
     getTTFB(metric => sendToAnalytics(context, metric, options))
     getLCP(metric => sendToAnalytics(context, metric, options))
     getCLS(metric => sendToAnalytics(context, metric, options))
     getFCP(metric => sendToAnalytics(context, metric, options))
-  } catch (err) {
+  }
+  catch (err) {
     logError(err)
   }
 }
