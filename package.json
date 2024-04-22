@@ -13,7 +13,8 @@
     "fcp",
     "fid",
     "lcp",
-    "ttfb"
+    "ttfb",
+    "inp"
   ],
   "repository": "nuxt-modules/web-vitals",
   "license": "MIT",
