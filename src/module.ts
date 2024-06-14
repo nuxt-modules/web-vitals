@@ -25,7 +25,7 @@ export default defineNuxtModule({
     name: 'web-vitals',
     configKey: 'webVitals',
     compatibility: {
-      nuxt: '^3.0.0 || ^2.15.0',
+      nuxt: '>=3.0.0 || ^2.15.0',
     },
   },
   defaults: {
