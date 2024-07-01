@@ -44,12 +44,12 @@
     "web-vitals": "^3.5.2"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "^0.5.5",
-    "eslint": "^9.1.1",
+    "@nuxt/module-builder": "^0.8.1",
+    "eslint": "^9.6.0",
     "nuxt": "^3.11.2",
     "standard-version": "^9.5.0",
-    "typescript": "^5.4.5",
-    "@nuxt/eslint-config": "^0.3.9"
+    "typescript": "^5.5.3",
+    "@nuxt/eslint-config": "^0.3.13"
   },
   "resolutions": {
     "@nuxtjs/web-vitals": "link:."
