@@ -41,7 +41,7 @@
     "defu": "^6.1.4",
     "pathe": "^1.1.2",
     "ufo": "^1.5.3",
-    "web-vitals": "^3.5.2"
+    "web-vitals": "^4.2.3"
   },
   "devDependencies": {
     "@nuxt/module-builder": "^0.5.5",
