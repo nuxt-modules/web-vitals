@@ -37,7 +37,7 @@
     "test": "pnpm lint"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.11.2",
+    "@nuxt/kit": "^3.13.2",
     "defu": "^6.1.4",
     "pathe": "^1.1.2",
     "ufo": "^1.5.3",
@@ -46,7 +46,7 @@
   "devDependencies": {
     "@nuxt/module-builder": "^0.5.5",
     "eslint": "^9.1.1",
-    "nuxt": "^3.11.2",
+    "nuxt": "^3.13.2",
     "standard-version": "^9.5.0",
     "typescript": "^5.4.5",
     "@nuxt/eslint-config": "^0.3.9"
