@@ -40,16 +40,16 @@
     "@nuxt/kit": "^3.11.2",
     "defu": "^6.1.4",
     "pathe": "^1.1.2",
-    "ufo": "^1.5.3",
+    "ufo": "^1.5.4",
     "web-vitals": "^3.5.2"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "^0.5.5",
-    "eslint": "^9.1.1",
+    "@nuxt/module-builder": "^0.8.4",
+    "eslint": "^9.13.0",
     "nuxt": "^3.11.2",
     "standard-version": "^9.5.0",
-    "typescript": "^5.4.5",
-    "@nuxt/eslint-config": "^0.3.9"
+    "typescript": "^5.6.3",
+    "@nuxt/eslint-config": "^0.6.0"
   },
   "resolutions": {
     "@nuxtjs/web-vitals": "link:."
