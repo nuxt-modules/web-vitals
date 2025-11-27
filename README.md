@@ -106,7 +106,7 @@ _Report WebVitals to a custom api endpoint_
 export default defineNuxtConfig({
   webVitals: {
     provider: 'api',
-    api: { url: '/api/web-vitals' }
+    api: { url: '/api/web-vitals' },
     debug: true // debug enable metrics reporting on dev environments
   })
 ```
