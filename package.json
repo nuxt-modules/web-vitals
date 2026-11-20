@@ -38,18 +38,18 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.11.2",
-    "defu": "^6.1.4",
+    "defu": "^6.1.7",
     "pathe": "^1.1.2",
-    "ufo": "^1.5.3",
+    "ufo": "^1.6.4",
     "web-vitals": "^3.5.2"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "^0.5.5",
-    "eslint": "^9.1.1",
+    "@nuxt/module-builder": "^0.8.4",
+    "eslint": "^9.39.5",
     "nuxt": "^3.11.2",
     "standard-version": "^9.5.0",
-    "typescript": "^5.4.5",
-    "@nuxt/eslint-config": "^0.3.9"
+    "typescript": "^5.9.3",
+    "@nuxt/eslint-config": "^0.7.6"
   },
   "resolutions": {
     "@nuxtjs/web-vitals": "link:."
